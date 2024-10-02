@@ -1,4 +1,5 @@
-# Generate website with GPT-4o
+# Use natural language generate website with GPT-4o
+
 ## Prompt 1
 
 幫我依照website_requirement.md需求生成網頁，並給我完整程式碼。
@@ -44,4 +45,51 @@
 
 ## Conclusion
 
-基本上只下了兩次prompt，就完成了所有功能，剩下兩次是UI上的調整，雖然最後沒有完成需求，但已經是一個合格的網頁了。
+基本上只下了兩次prompt，就完成了所有功能。剩下兩次是UI上的調整，雖然最後沒有完成需求，但已經是一個標準的網頁了。
+
+## Mermaid
+
+```mermaid
+graph TD
+    A[HTML Document] --> B[Head Section];
+    B --> C[CSS: style.css];
+    B --> D[Script: script.js];
+    A --> E[Body Section];
+
+    E --> F[Header];
+    F --> G[Title: Typing Practice];
+    F --> H[Button: Switch to Dark Mode];
+
+    E --> I[Info Bar];
+    I --> J[Countdown: Time Left];
+    I --> K[Results: WPM];
+
+    E --> L[Text Display];
+    L --> M[Text to Type];
+
+    E --> N[Textarea: Typing Area];
+
+    E --> O[Virtual Keyboard];
+    O --> P[Keyboard Layout];
+
+    E --> Q[Controls];
+    Q --> R[Button: Generate Text];
+    Q --> S[Button: Add Custom Text];
+
+    E --> T[Modal: Add Custom Text];
+    T --> U[Textarea: Custom Text Input];
+    T --> V[Button: Save Text];
+    T --> W[Button: Cancel];
+
+style A fill:#f9f9f9,stroke:#333,stroke-width:2px
+style B fill:#f4f4f4,stroke:#ccc
+style C fill:#007bff,stroke:#fff
+style D fill:#007bff,stroke:#fff
+style F fill:#f9f9f9,stroke:#333
+style I fill:#f4f4f4,stroke:#ccc
+style L fill:#fff,stroke:#ccc
+style N fill:#fff,stroke:#ccc
+style O fill:#f4f4f4,stroke:#ccc
+style Q fill:#f4f4f4,stroke:#ccc
+style T fill:#fff,stroke:#ccc
+```
