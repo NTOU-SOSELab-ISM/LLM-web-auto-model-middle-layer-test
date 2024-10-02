@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>旅遊景點評論網 - 留言板</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="icon.png" alt="Icon" class="logo-icon">
+            <span class="site-title">旅遊景點評論網</span>
+        </div>
+        <div class="header-right">
+            <a href="index.html" class="nav-link">景點資訊查詢區</a>
+            <a href="discussion.html" class="nav-link">討論區</a>
+            <a href="message.html" class="nav-link active">留言板</a>
+        </div>
+    </header>
+
+    <div class="message-board">
+        <div class="messages" id="messageList">
+            <!-- 留言將動態生成 -->
+        </div>
+        <div class="input-area">
+            <input type="text" id="messageUsername" placeholder="輸入使用者名稱">
+            <textarea id="messageContent" placeholder="輸入留言內容"></textarea>
+            <button id="postMessage">發表留言</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 初始化留言板資料
+        const messagesData = [
+            {
+                "username": "Charlie",
+                "content": "這個網站真的很有用！",
+                "time": "2024-04-01 08:30"
+            },
+            // 至少三則留言...
+        ];
+
+        // 檢查並初始化localStorage
+        if (!localStorage.getItem('messages')) {
+            localStorage.setItem('messages', JSON.stringify(messagesData));
+        }
+
+        // 呼叫初始化函式
+        initializeMessagePage();
+    </script>
+</body>
+</html>

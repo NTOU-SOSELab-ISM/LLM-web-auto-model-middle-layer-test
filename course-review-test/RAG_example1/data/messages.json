@@ -1,0 +1,17 @@
+[
+    {
+        "username": "Charlie",
+        "content": "這個網站真的很有用！",
+        "time": "2024-04-01 08:30"
+    },
+    {
+        "username": "Daisy",
+        "content": "我喜歡這個網站的設計！",
+        "time": "2024-04-01 09:00"
+    },
+    {
+        "username": "Ethan",
+        "content": "希望能新增更多景點資訊。",
+        "time": "2024-04-01 09:30"
+    }
+]

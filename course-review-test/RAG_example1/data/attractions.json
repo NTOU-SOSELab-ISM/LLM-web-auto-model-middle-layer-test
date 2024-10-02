@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "name": "台北101",
+        "region": "台北市",
+        "rating": {
+            "scenery": 4,
+            "service": 5,
+            "satisfaction": 5
+        },
+        "popularity": 5000,
+        "comments": [
+            {
+                "username": "Alice",
+                "comment": "景色非常壯觀，服務也很好！",
+                "rating": {
+                    "scenery": 5,
+                    "service": 5,
+                    "satisfaction": 5
+                },
+                "time": "2024-04-01 10:00"
+            },
+            {
+                "username": "Bob",
+                "comment": "台北101的夜景令人驚豔。",
+                "rating": {
+                    "scenery": 4,
+                    "service": 4,
+                    "satisfaction": 4
+                },
+                "time": "2024-04-02 12:30"
+            },
+            {
+                "username": "Charlie",
+                "comment": "人太多，等候時間長。",
+                "rating": {
+                    "scenery": 3,
+                    "service": 4,
+                    "satisfaction": 3
+                },
+                "time": "2024-04-03 14:15"
+            },
+            {
+                "username": "Daisy",
+                "comment": "觀景台的設施很完善。",
+                "rating": {
+                    "scenery": 5,
+                    "service": 5,
+                    "satisfaction": 5
+                },
+                "time": "2024-04-04 09:45"
+            },
+            {
+                "username": "Ethan",
+                "comment": "購物中心選擇豐富。",
+                "rating": {
+                    "scenery": 4,
+                    "service": 5,
+                    "satisfaction": 4
+                },
+                "time": "2024-04-05 11:20"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "日月潭",
+        "region": "南投縣",
+        "rating": {
+            "scenery": 5,
+            "service": 4,
+            "satisfaction": 5
+        },
+        "popularity": 3000,
+        "comments": [
+            {
+                "username": "Fiona",
+                "comment": "風景如畫，適合放鬆心情。",
+                "rating": {
+                    "scenery": 5,
+                    "service": 4,
+                    "satisfaction": 5
+                },
+                "time": "2024-04-06 08:30"
+            },
+            // 其他評論...
+        ]
+    },
+    // 至少六個景點...
+]

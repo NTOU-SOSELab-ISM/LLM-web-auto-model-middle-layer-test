@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>旅遊景點評論網 - 景點資訊查詢區</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="icon.png" alt="Icon" class="logo-icon">
+            <span class="site-title">旅遊景點評論網</span>
+        </div>
+        <div class="header-right">
+            <a href="index.html" class="nav-link active">景點資訊查詢區</a>
+            <a href="discussion.html" class="nav-link">討論區</a>
+            <a href="message.html" class="nav-link">留言板</a>
+        </div>
+    </header>
+
+    <div class="search-section">
+        <h2>使用關鍵字查詢</h2>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="輸入關鍵字...">
+            <select id="searchType">
+                <option value="name">依景點名稱查詢</option>
+                <option value="region">依地區查詢</option>
+            </select>
+            <button id="searchButton">搜尋</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="left-panel" id="resultsPanel">
+            <!-- 景點Card將動態生成 -->
+        </div>
+        <div class="right-panel" id="detailPanel">
+            <button id="addReviewButton" class="hidden">新增景點評論</button>
+            <div id="reviewForm" class="hidden">
+                <h3>新增評論</h3>
+                <input type="text" id="username" placeholder="輸入使用者名稱">
+                <textarea id="comment" placeholder="輸入評論"></textarea>
+                <div class="rating">
+                    <label>景色評分：</label>
+                    <div class="stars" data-type="scenery"></div>
+                </div>
+                <div class="rating">
+                    <label>服務評分：</label>
+                    <div class="stars" data-type="service"></div>
+                </div>
+                <div class="rating">
+                    <label>整體滿意度：</label>
+                    <div class="stars" data-type="satisfaction"></div>
+                </div>
+                <button id="submitReview">提交</button>
+            </div>
+            <div id="reviewsDisplay">
+                <!-- 評論將動態生成 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 初始化景點資訊
+        const attractionsData = [
+            {
+                "id": 1,
+                "name": "台北101",
+                "region": "台北市",
+                "rating": {
+                    "scenery": 4,
+                    "service": 5,
+                    "satisfaction": 5
+                },
+                "popularity": 5000,
+                "comments": [
+                    {
+                        "username": "Alice",
+                        "comment": "景色非常壯觀，服務也很好！",
+                        "rating": {
+                            "scenery": 5,
+                            "service": 5,
+                            "satisfaction": 5
+                        },
+                        "time": "2024-04-01 10:00"
+                    },
+                    // 其他評論...
+                ]
+            },
+            // 至少六個景點...
+        ];
+
+        // 檢查並初始化localStorage
+        if (!localStorage.getItem('attractions')) {
+            localStorage.setItem('attractions', JSON.stringify(attractionsData));
+        }
+
+        // 呼叫初始化函式
+        initializeSearchPage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>旅遊景點評論網 - 討論區</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="icon.png" alt="Icon" class="logo-icon">
+            <span class="site-title">旅遊景點評論網</span>
+        </div>
+        <div class="header-right">
+            <a href="index.html" class="nav-link">景點資訊查詢區</a>
+            <a href="discussion.html" class="nav-link active">討論區</a>
+            <a href="message.html" class="nav-link">留言板</a>
+        </div>
+    </header>
+
+    <div class="discussion-section">
+        <div class="chatbox" id="chatbox">
+            <!-- 訊息將動態生成 -->
+        </div>
+        <div class="input-area">
+            <input type="color" id="nicknameColor" value="#000000">
+            <input type="text" id="nickname" placeholder="輸入暱稱">
+            <input type="text" id="messageInput" placeholder="輸入訊息">
+            <button id="sendMessage">發送</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 初始化討論區資料
+        const discussionsData = [
+            {
+                "username": "Bob",
+                "color": "#ff0000",
+                "message": "大家好！這個網站很棒！",
+                "time": "2024-04-01 09:00"
+            },
+            // 至少十則訊息...
+        ];
+
+        // 檢查並初始化localStorage
+        if (!localStorage.getItem('discussions')) {
+            localStorage.setItem('discussions', JSON.stringify(discussionsData));
+        }
+
+        // 呼叫初始化函式
+        initializeDiscussionPage();
+    </script>
+</body>
+</html>
