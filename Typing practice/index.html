@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Typing Practice</h1>
+            <button id="theme-toggle">Switch to Dark Mode</button>
+        </header>
+
+        <div class="info-bar">
+            <div class="countdown">Time Left: <span id="timer">60</span>s</div>
+            <div class="results">WPM: <span id="wpm">0</span></div>
+        </div>
+
+        <div class="text-display">
+            <p id="text-to-type"></p>
+        </div>
+
+        <textarea id="typing-area" placeholder="Start typing here..." disabled></textarea>
+
+        <div class="keyboard">
+            <div id="keyboard"></div>
+        </div>
+
+        <div class="controls">
+            <button id="generate-text-btn">Generate Text</button>
+            <button id="add-text-btn">Add Custom Text</button>
+        </div>
+
+        <div id="custom-text-modal" class="modal">
+            <div class="modal-content">
+                <h2>Add Custom Text</h2>
+                <textarea id="custom-text-input" placeholder="Enter your custom text here..."></textarea>
+                <div class="modal-buttons">
+                    <button id="save-text-btn">Save</button>
+                    <button id="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
