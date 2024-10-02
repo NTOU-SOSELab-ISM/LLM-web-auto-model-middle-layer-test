@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程評價網 - 課程資訊查詢</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
+            <img src="icon.png" alt="logo">
+            <span>課程評價網</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html" class="active">課程資訊查詢區</a>
+            <a href="discussion.html">討論區</a>
+        </nav>
+    </header>
+
+    <div class="search-section">
+        <label for="search">使用關鍵字查詢</label>
+        <input type="text" id="search" placeholder="輸入關鍵字...">
+        <select id="search-type">
+            <option value="course">依課名查詢</option>
+            <option value="teacher">依老師名字查詢</option>
+        </select>
+        <button onclick="search()">搜尋</button>
+    </div>
+
+    <div class="content">
+        <div class="courses-list" id="courses-list"></div>
+        <div class="course-details" id="course-details">
+            <button onclick="showReviewForm()" id="add-review-btn" style="display: none;">新增課程評論</button>
+            <div id="review-form" style="display:none;">
+                <input type="text" id="user-name" placeholder="輸入使用者名稱">
+                <textarea id="user-comment" placeholder="輸入評論"></textarea>
+                <label>課程涼度: <input type="number" id="coolness-rating" min="1" max="5"></label>
+                <label>給分甜度: <input type="number" id="grading-rating" min="1" max="5"></label>
+                <label>考試難度: <input type="number" id="difficulty-rating" min="1" max="5"></label>
+                <button onclick="submitReview()">提交</button>
+            </div>
+            <div id="reviews"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

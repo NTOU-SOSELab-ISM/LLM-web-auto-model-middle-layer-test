@@ -1,0 +1,120 @@
+{
+  "courses": [
+    {
+      "name": "程式設計入門",
+      "teacher": "李老師",
+      "ratings": {
+        "coolness": 4,
+        "grading": 3,
+        "difficulty": 2
+      },
+      "reviews": [
+        {
+          "user": "Alice",
+          "comment": "這堂課內容深入淺出，非常適合初學者。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 3,
+            "difficulty": 2
+          }
+        },
+        {
+          "user": "Bob",
+          "comment": "老師講解清楚，作業量剛好。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 3
+          }
+        }
+      ]
+    },
+    {
+      "name": "線性代數",
+      "teacher": "張老師",
+      "ratings": {
+        "coolness": 3,
+        "grading": 5,
+        "difficulty": 4
+      },
+      "reviews": [
+        {
+          "user": "Charlie",
+          "comment": "老師教得很好，內容豐富。",
+          "ratings": {
+            "coolness": 3,
+            "grading": 5,
+            "difficulty": 4
+          }
+        },
+        {
+          "user": "David",
+          "comment": "課程難度適中，學到了很多知識。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 4
+          }
+        }
+      ]
+    },
+    {
+      "name": "微積分",
+      "teacher": "王老師",
+      "ratings": {
+        "coolness": 2,
+        "grading": 3,
+        "difficulty": 5
+      },
+      "reviews": [
+        {
+          "user": "Eve",
+          "comment": "內容艱深，老師講解清楚。",
+          "ratings": {
+            "coolness": 2,
+            "grading": 3,
+            "difficulty": 5
+          }
+        },
+        {
+          "user": "Frank",
+          "comment": "考試很難，需要很多準備。",
+          "ratings": {
+            "coolness": 2,
+            "grading": 2,
+            "difficulty": 5
+          }
+        }
+      ]
+    },
+    {
+      "name": "資料結構",
+      "teacher": "劉老師",
+      "ratings": {
+        "coolness": 4,
+        "grading": 4,
+        "difficulty": 3
+      },
+      "reviews": [
+        {
+          "user": "Grace",
+          "comment": "課程內容豐富，老師講解清楚。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 3
+          }
+        },
+        {
+          "user": "Hank",
+          "comment": "內容有點難，但老師很有耐心。",
+          "ratings": {
+            "coolness": 3,
+            "grading": 4,
+            "difficulty": 4
+          }
+        }
+      ]
+    }
+  ]
+}
