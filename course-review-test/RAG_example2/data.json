@@ -1,0 +1,165 @@
+{
+    "restaurants": [
+        {
+            "id": 1,
+            "name": "美味餐廳A",
+            "city": "台北",
+            "cuisine": "中式",
+            "avgDiversity": 4,
+            "avgService": 5,
+            "avgPrice": 3,
+            "popularity": 120
+        },
+        {
+            "id": 2,
+            "name": "風味餐廳B",
+            "city": "高雄",
+            "cuisine": "日式",
+            "avgDiversity": 5,
+            "avgService": 4,
+            "avgPrice": 4,
+            "popularity": 98
+        },
+        {
+            "id": 3,
+            "name": "特色餐廳C",
+            "city": "台中",
+            "cuisine": "西式",
+            "avgDiversity": 3,
+            "avgService": 3,
+            "avgPrice": 5,
+            "popularity": 150
+        },
+        {
+            "id": 4,
+            "name": "小吃店D",
+            "city": "台南",
+            "cuisine": "台式",
+            "avgDiversity": 4,
+            "avgService": 4,
+            "avgPrice": 4,
+            "popularity": 80
+        },
+        {
+            "id": 5,
+            "name": "咖啡館E",
+            "city": "新竹",
+            "cuisine": "飲品",
+            "avgDiversity": 5,
+            "avgService": 5,
+            "avgPrice": 3,
+            "popularity": 110
+        },
+        {
+            "id": 6,
+            "name": "燒烤店F",
+            "city": "花蓮",
+            "cuisine": "韓式",
+            "avgDiversity": 3,
+            "avgService": 4,
+            "avgPrice": 4,
+            "popularity": 95
+        },
+        {
+            "id": 7,
+            "name": "素食餐廳G",
+            "city": "嘉義",
+            "cuisine": "素食",
+            "avgDiversity": 4,
+            "avgService": 5,
+            "avgPrice": 4,
+            "popularity": 85
+        },
+        {
+            "id": 8,
+            "name": "海鮮餐廳H",
+            "city": "基隆",
+            "cuisine": "海鮮",
+            "avgDiversity": 5,
+            "avgService": 3,
+            "avgPrice": 5,
+            "popularity": 130
+        }
+    ],
+    "comments": [
+        {
+            "restaurantId": 1,
+            "userName": "Alice",
+            "content": "餐點非常美味，服務也很好！",
+            "diversityRating": 5,
+            "serviceRating": 5,
+            "priceRating": 4,
+            "time": "2023-10-01 14:20"
+        },
+        {
+            "restaurantId": 1,
+            "userName": "Bob",
+            "content": "環境優雅，推薦！",
+            "diversityRating": 4,
+            "serviceRating": 5,
+            "priceRating": 3,
+            "time": "2023-10-02 15:30"
+        },
+        {
+            "restaurantId": 1,
+            "userName": "Charlie",
+            "content": "菜色多樣，價格合理。",
+            "diversityRating": 5,
+            "serviceRating": 4,
+            "priceRating": 4,
+            "time": "2023-10-03 16:40"
+        },
+        {
+            "restaurantId": 1,
+            "userName": "David",
+            "content": "非常喜歡這裡的氣氛。",
+            "diversityRating": 4,
+            "serviceRating": 5,
+            "priceRating": 4,
+            "time": "2023-10-04 17:50"
+        },
+
+        {
+            "restaurantId": 2,
+            "userName": "Eve",
+            "content": "日式料理很道地。",
+            "diversityRating": 5,
+            "serviceRating": 4,
+            "priceRating": 4,
+            "time": "2023-10-01 12:20"
+        }
+
+    ],
+    "chatMessages": [
+        {
+            "userName": "Foodie1",
+            "color": "#FF0000",
+            "content": "大家好，有推薦的餐廳嗎？",
+            "time": "14:00"
+        },
+        {
+            "userName": "Gourmet2",
+            "color": "#00FF00",
+            "content": "我喜歡美味餐廳A！",
+            "time": "14:05"
+        }   
+    
+    ],
+    "feedbacks": [
+        {
+            "userName": "Visitor1",
+            "content": "網站設計很棒，使用起來很方便。",
+            "time": "2023-10-05 10:00"
+        },
+        {
+            "userName": "Visitor2",
+            "content": "希望能增加更多餐廳資訊。",
+            "time": "2023-10-06 11:15"
+        },
+        {
+            "userName": "Visitor3",
+            "content": "評論區域很實用，感謝！",
+            "time": "2023-10-07 12:30"
+        }
+    ]
+}

@@ -1,0 +1,318 @@
+/* 全域樣式 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc; /* 淺米黃色背景 */
+}
+
+header {
+    background-color: #8B0000; /* 深紅色背景 */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a.active {
+    color: white;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* 搜尋區域 */
+.search-area {
+    padding: 20px;
+    text-align: center;
+}
+
+.search-area p {
+    font-size: 20px;
+}
+
+.search-area input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.filter-options {
+    margin: 10px 0;
+}
+
+.filter-options label {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* 主體區域 */
+main {
+    display: flex;
+    padding: 20px;
+}
+
+.left-panel {
+    width: 50%;
+    padding-right: 10px;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.right-panel {
+    width: 50%;
+    padding-left: 10px;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.restaurant-card {
+    background-color: white;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.restaurant-card.selected {
+    border-color: #8B0000; /* 深紅色外框 */
+}
+
+.restaurant-card h3 {
+    margin: 0;
+}
+
+.restaurant-card .ratings {
+    margin-top: 10px;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.rating-row p {
+    margin: 0;
+    margin-right: 5px;
+}
+
+.star-rating {
+    display: inline-block;
+}
+
+.star-rating i {
+    color: #ccc;
+    margin-right: 2px;
+}
+
+.star-rating .fas {
+    color: #FFD700; /* 金色 */
+}
+
+#addCommentButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#commentForm {
+    background-color: white;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#commentForm input[type="text"],
+#commentForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#commentForm .rating {
+    margin-bottom: 10px;
+}
+
+#commentForm .star-rating i {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#submitComment {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* 評論區 */
+#commentsSection {
+    margin-top: 20px;
+}
+
+.comment-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-card h4 {
+    margin: 0 0 5px 0;
+}
+
+.comment-card .ratings {
+    margin-top: 10px;
+}
+
+.comment-card p {
+    margin: 5px 0;
+}
+
+/* 美食討論區樣式 */
+.discussion-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.chat-room {
+    background-color: #fff;
+    padding: 20px;
+    width: 60%;
+    max-width: 800px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px - 40px); /* 減去 header 和 padding 的高度 */
+}
+
+.chat-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chat-controls input[type="text"] {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.chat-messages {
+    border: 1px solid #ccc;
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.chat-message {
+    margin-bottom: 10px;
+}
+
+.chat-input {
+    display: flex;
+    margin-top: 10px;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+}
+
+#sendChat {
+    padding: 10px 20px;
+}
+
+/* 食客意見區樣式 */
+.feedback-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#feedbackList {
+    width: 60%;
+    max-width: 800px;
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.feedback-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.feedback-card h4 {
+    margin: 0 0 5px 0;
+}
+
+.feedback-card p {
+    margin: 5px 0;
+}
+
+#addFeedbackButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#feedbackForm {
+    background-color: #fff;
+    padding: 20px;
+    width: 60%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+#feedbackForm input[type="text"],
+#feedbackForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#submitFeedback {
+    padding: 10px 20px;
+    font-size: 16px;
+}

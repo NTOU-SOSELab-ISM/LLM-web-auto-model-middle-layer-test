@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>美食餐廳評價網 - 食客意見區</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header 區域 -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils fa-2x"></i>
+            <h1>美食餐廳評價網</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">餐廳資訊查詢區</a></li>
+                <li><a href="discussion.html">美食討論區</a></li>
+                <li><a href="feedback.html" class="active">食客意見區</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主體區域 -->
+    <main class="feedback-area">
+        <div id="feedbackList">
+            <!-- 留言卡片將由JavaScript動態生成 -->
+        </div>
+        <button id="addFeedbackButton">新增留言</button>
+        <div id="feedbackForm" style="display: none;">
+            <input type="text" id="feedbackUserName" placeholder="使用者名稱">
+            <textarea id="feedbackContent" placeholder="留言內容"></textarea>
+            <button id="submitFeedback">提交</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>美食餐廳評價網 - 餐廳資訊查詢區</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header 區域 -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils fa-2x"></i>
+            <h1>美食餐廳評價網</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">餐廳資訊查詢區</a></li>
+                <li><a href="discussion.html">美食討論區</a></li>
+                <li><a href="feedback.html">食客意見區</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 搜尋區域 -->
+    <section class="search-area">
+        <p>輸入關鍵字查詢餐廳</p>
+        <input type="text" id="searchInput" placeholder="輸入餐廳名稱或美食關鍵字">
+        <div class="filter-options">
+            <label><input type="radio" name="filter" value="name" checked>依餐廳名稱查詢</label>
+            <label><input type="radio" name="filter" value="cuisine">依菜式查詢</label>
+        </div>
+        <button id="searchButton">搜尋</button>
+    </section>
+
+    <!-- 主體區域 -->
+    <main>
+        <div class="left-panel" id="restaurantList">
+            <!-- 餐廳卡片將由JavaScript動態生成 -->
+        </div>
+        <div class="right-panel" id="restaurantDetails">
+            <!-- 餐廳詳細資訊和評論區 -->
+            <div id="commentsSection">
+                <!-- 評論將由JavaScript動態生成 -->
+            </div>
+            <button id="addCommentButton">新增餐廳評論</button>
+            <div id="commentForm" style="display: none;">
+                <h3>新增評論</h3>
+                <input type="text" id="userName" placeholder="使用者名稱">
+                <textarea id="commentContent" placeholder="評論內容"></textarea>
+                <div class="rating">
+                    <p>菜式多樣性評分：</p>
+                    <div id="diversityRating" class="star-rating"></div>
+                </div>
+                <div class="rating">
+                    <p>服務評分：</p>
+                    <div id="serviceRating" class="star-rating"></div>
+                </div>
+                <div class="rating">
+                    <p>價格合理度：</p>
+                    <div id="priceRating" class="star-rating"></div>
+                </div>
+                <button id="submitComment">提交</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

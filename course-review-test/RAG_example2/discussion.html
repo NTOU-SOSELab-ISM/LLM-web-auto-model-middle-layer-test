@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>美食餐廳評價網 - 美食討論區</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header 區域 -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils fa-2x"></i>
+            <h1>美食餐廳評價網</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">餐廳資訊查詢區</a></li>
+                <li><a href="discussion.html" class="active">美食討論區</a></li>
+                <li><a href="feedback.html">食客意見區</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 主體區域 -->
+    <main class="discussion-area">
+        <section class="chat-room">
+            <div class="chat-controls">
+                <input type="color" id="userColor" value="#000000">
+                <input type="text" id="chatUserName" placeholder="使用者暱稱">
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <!-- 聊天訊息將由JavaScript動態生成 -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="輸入訊息，按Enter鍵發送">
+                <button id="sendChat">發送</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
