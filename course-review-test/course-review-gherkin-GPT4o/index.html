@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程評論網站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span><a href="index.html">課程評價網</a></span>
+        </div>
+        <nav>
+            <a href="index.html" class="active">課程資訊查詢區</a>
+            <a href="discussion.html">討論區</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="search-section">
+            <label for="searchInput">使用關鍵字查詢</label>
+            <input type="text" id="searchInput" placeholder="輸入課程名或老師名">
+            <select id="searchType">
+                <option value="course">依課名查詢</option>
+                <option value="teacher">依老師名字查詢</option>
+            </select>
+            <button onclick="searchCourses()">搜尋</button>
+        </div>
+
+        <div class="content">
+            <div class="course-list" id="courseList">
+                <!-- 課程列表將由 JavaScript 動態生成 -->
+            </div>
+
+            <div class="course-detail">
+                <button id="addReviewButton" onclick="toggleAddReview()">新增課程評論</button>
+                <div id="courseReviews">
+                    <!-- 課程評論將由 JavaScript 動態生成 -->
+                </div>
+                <div id="addReviewSection" style="display:none;">
+                    <h3>新增課程評論</h3>
+                    <input type="text" id="username" placeholder="輸入使用者名稱">
+                    <textarea id="review" placeholder="輸入評論"></textarea>
+                    <div class="rating-section">
+                        <label for="coolness">課程涼度</label>
+                        <div class="rating" id="coolnessRating"></div>
+                    </div>
+                    <div class="rating-section">
+                        <label for="grading">給分甜度</label>
+                        <div class="rating" id="gradingRating"></div>
+                    </div>
+                    <div class="rating-section">
+                        <label for="difficulty">考試難度</label>
+                        <div class="rating" id="difficultyRating"></div>
+                    </div>
+                    <button onclick="submitReview()">提交</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
