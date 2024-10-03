@@ -1,37 +1,234 @@
-以下是GPT4o生出來的mermaid檔案：
+以下是Claude生出來的mermaid檔案：
 
 ```mermaid
-flowchart TD
-    A(課程評論網站) --> B(點選「課程評價網」回到首頁)
-    B --> C[indel.html]
+%% 網站結構圖
+graph TD
+    A[首頁 index.html] --> B[課程資訊查詢區]
+    A --> C[討論區 discussion.html]
+    B --> D[搜索課程]
+    B --> E[查看課程詳情]
+    B --> F[添加課程評論]
+    C --> G[查看歷史消息]
+    C --> H[發送新消息]
 
-    A --> D(課程資訊查詢區)
-    D --> E(顯示所有課程)
-    E --> F[顯示課程名稱、老師姓名、評分、討論熱度]
+%% 課程資訊查詢流程
+flowchart LR
+    A[開始] --> B{用戶訪問課程資訊查詢區}
+    B --> C[顯示所有課程]
+    C --> D{用戶搜索課程?}
+    D -->|是| E[過濾並顯示符合條件的課程]
+    D -->|否| F{用戶選擇課程?}
+    E --> F
+    F -->|是| G[顯示課程詳情和評論]
+    G --> H{用戶添加評論?}
+    H -->|是| I[顯示評論表單]
+    I --> J[提交評論]
+    J --> K[更新課程評論列表]
+    H -->|否| F
+    F -->|否| B
+
+%% 討論區流程
+sequenceDiagram
+    participant U as 用戶
+    participant D as 討論區頁面
+    participant S as 服務器
     
-    F --> G(點擊課程物件)
-    G --> H(顯示課程評論)
-    H --> I[顯示右側評論]
-    G --> J[課程物件加上深灰色邊框]
+    U->>D: 訪問討論區
+    D->>S: 請求歷史消息
+    S-->>D: 返回歷史消息
+    D->>U: 顯示歷史消息
+    U->>D: 輸入新消息
+    D->>S: 發送新消息
+    S-->>D: 確認消息發送
+    D->>U: 更新消息列表
 
-    D --> K(搜尋課程關鍵字)
-    K --> L[使用者輸入關鍵字並選擇查詢條件]
-    L --> M(點擊搜尋)
-    M --> N{是否有符合的課程?}
-    N -- 有 --> O[顯示相應結果]
-    N -- 無 --> P[顯示「查無結果」提示]
+%% 數據模型
+classDiagram
+    class Course {
+        +int id
+        +string name
+        +string teacher
+        +int coolness
+        +int grading
+        +int difficulty
+        +int discussionHeat
+        +Review[] reviews
+    }
+    class Review {
+        +int id
+        +string username
+        +string content
+        +int coolness
+        +int grading
+        +int difficulty
+    }
+    class Message {
+        +int id
+        +string nickname
+        +string color
+        +string content
+        +DateTime timestamp
+    }
+    Course "1" -- "*" Review : has
+```
 
-    D --> Q(新增課程評論)
-    Q --> R[點擊新增評論按鈕]
-    R --> S(填寫評論與評分)
-    S --> T(提交評論)
-    T --> U[即時顯示新評論於列表最上方]
+### Prompt 2
+「在hackmd中，貌似 H[發送新消息]這種中括號裡面包著暱稱的用法會錯誤，能幫我更改一下嗎」
 
-    A --> V(討論區)
-    V --> W(顯示討論區歷史訊息)
-    W --> X[顯示3位使用者歷史訊息]
-    V --> Y(新增討論區訊息)
-    Y --> Z[使用者輸入暱稱、顏色與訊息]
-    Z --> AA(發送訊息)
-    AA --> BB[顯示新訊息於討論區]
+```mermaid
+%% 網站結構圖
+graph TD
+    A["首頁 index.html"] --> B["課程資訊查詢區"]
+    A --> C["討論區 discussion.html"]
+    B --> D["搜索課程"]
+    B --> E["查看課程詳情"]
+    B --> F["添加課程評論"]
+    C --> G["查看歷史消息"]
+    C --> H["發送新消息"]
+
+%% 課程資訊查詢流程
+flowchart LR
+    A["開始"] --> B{"用戶訪問課程資訊查詢區"}
+    B --> C["顯示所有課程"]
+    C --> D{"用戶搜索課程?"}
+    D -->|是| E["過濾並顯示符合條件的課程"]
+    D -->|否| F{"用戶選擇課程?"}
+    E --> F
+    F -->|是| G["顯示課程詳情和評論"]
+    G --> H{"用戶添加評論?"}
+    H -->|是| I["顯示評論表單"]
+    I --> J["提交評論"]
+    J --> K["更新課程評論列表"]
+    H -->|否| F
+    F -->|否| B
+
+%% 討論區流程
+sequenceDiagram
+    participant U as 用戶
+    participant D as 討論區頁面
+    participant S as 服務器
+    
+    U->>D: 訪問討論區
+    D->>S: 請求歷史消息
+    S-->>D: 返回歷史消息
+    D->>U: 顯示歷史消息
+    U->>D: 輸入新消息
+    D->>S: 發送新消息
+    S-->>D: 確認消息發送
+    D->>U: 更新消息列表
+
+%% 數據模型
+classDiagram
+    class Course {
+        +int id
+        +string name
+        +string teacher
+        +int coolness
+        +int grading
+        +int difficulty
+        +int discussionHeat
+        +Review[] reviews
+    }
+    class Review {
+        +int id
+        +string username
+        +string content
+        +int coolness
+        +int grading
+        +int difficulty
+    }
+    class Message {
+        +int id
+        +string nickname
+        +string color
+        +string content
+        +DateTime timestamp
+    }
+    Course "1" -- "*" Review : has
+```
+
+### Prompt 3
+
+我直接丟給他報錯資訊
+「Error: Parse error on line 9:
+...   C --> H["發送新消息"]flowchart LR」
+
+```mermaid
+%%{init: {'theme': 'neutral' }}%%
+
+%% 網站結構圖
+graph TD
+    A["首頁 index.html"] --> B["課程資訊查詢區"]
+    A --> C["討論區 discussion.html"]
+    B --> D["搜索課程"]
+    B --> E["查看課程詳情"]
+    B --> F["添加課程評論"]
+    C --> G["查看歷史消息"]
+    C --> H["發送新消息"]
+
+---
+
+%% 課程資訊查詢流程
+flowchart LR
+    A["開始"] --> B{"用戶訪問課程資訊查詢區"}
+    B --> C["顯示所有課程"]
+    C --> D{"用戶搜索課程?"}
+    D -->|是| E["過濾並顯示符合條件的課程"]
+    D -->|否| F{"用戶選擇課程?"}
+    E --> F
+    F -->|是| G["顯示課程詳情和評論"]
+    G --> H{"用戶添加評論?"}
+    H -->|是| I["顯示評論表單"]
+    I --> J["提交評論"]
+    J --> K["更新課程評論列表"]
+    H -->|否| F
+    F -->|否| B
+
+---
+
+%% 討論區流程
+sequenceDiagram
+    participant U as 用戶
+    participant D as 討論區頁面
+    participant S as 服務器
+    
+    U->>D: 訪問討論區
+    D->>S: 請求歷史消息
+    S-->>D: 返回歷史消息
+    D->>U: 顯示歷史消息
+    U->>D: 輸入新消息
+    D->>S: 發送新消息
+    S-->>D: 確認消息發送
+    D->>U: 更新消息列表
+
+---
+
+%% 數據模型
+classDiagram
+    class Course {
+        +int id
+        +string name
+        +string teacher
+        +int coolness
+        +int grading
+        +int difficulty
+        +int discussionHeat
+        +Review[] reviews
+    }
+    class Review {
+        +int id
+        +string username
+        +string content
+        +int coolness
+        +int grading
+        +int difficulty
+    }
+    class Message {
+        +int id
+        +string nickname
+        +string color
+        +string content
+        +DateTime timestamp
+    }
+    Course "1" -- "*" Review : has
 ```
