@@ -232,3 +232,5 @@ classDiagram
     }
     Course "1" -- "*" Review : has
 ```
+
+~~Claude好笨...~~
