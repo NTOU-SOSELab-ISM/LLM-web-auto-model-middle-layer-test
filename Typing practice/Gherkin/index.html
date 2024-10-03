@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Typing Practice</h1>
+        <button id="switchBackground">Switch to Dark Mode</button>
+        <p id="timerDisplay">Time: 0 seconds</p>
+        <p id="wpmDisplay">WPM: 0</p>
+    </header>
+
+    <main>
+        <p id="textToType"></p>
+        <input type="text" id="typingInput" placeholder="Start typing..." disabled>
+
+        <button id="addTextBtn">Add Text</button>
+
+        <!-- Modal for adding custom text -->
+        <div id="addTextModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Custom Text</h2>
+                <textarea id="customTextInput" rows="4" cols="50" placeholder="Enter your custom text"></textarea>
+                <button id="submitCustomText">Submit</button>
+                <button id="cancelCustomText">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Virtual Keyboard -->
+        <div id="keyboard">
+            <div class="key-row">
+                <div class="key">Q</div><div class="key">W</div><div class="key">E</div><div class="key">R</div>
+                <!-- Add all alphabet letters and punctuation -->
+                <div class="key">T</div><div class="key">Y</div><div class="key">U</div><div class="key">I</div><div class="key">O</div><div class="key">P</div>
+            </div>
+            <div class="key-row">
+                <div class="key">A</div><div class="key">S</div><div class="key">D</div><div class="key">F</div><div class="key">G</div>
+                <div class="key">H</div><div class="key">J</div><div class="key">K</div><div class="key">L</div>
+            </div>
+            <div class="key-row">
+                <div class="key">Z</div><div class="key">X</div><div class="key">C</div><div class="key">V</div><div class="key">B</div>
+                <div class="key">N</div><div class="key">M</div>
+                <div class="key">,</div><div class="key">.</div><div class="key">;</div><div class="key">:</div><div class="key">?</div><div class="key">!</div>
+            </div>
+            <div class="key-row">
+                <div class="key">'</div><div class="key">"</div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

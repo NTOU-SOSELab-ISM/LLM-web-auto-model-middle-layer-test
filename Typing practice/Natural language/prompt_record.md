@@ -1,4 +1,4 @@
-# Use natural language generate website with GPT-4o
+# Use natural language to generate website by GPT-4o
 
 ## Prompt 1
 
