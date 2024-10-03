@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo i {
+    margin-right: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+nav a.active {
+    font-weight: bold;
+}
+
+main {
+    padding: 2rem;
+}
+
+.search-section {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.search-options {
+    margin-bottom: 1rem;
+}
+
+.content {
+    display: flex;
+    gap: 2rem;
+}
+
+.course-list, .course-details {
+    flex: 1;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.course-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.course-card.active {
+    border: 2px solid #333;
+}
+
+.stars {
+    color: gold;
+}
+
+.chat-room {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#chatMessages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+}
+
+#addReviewForm {
+    margin-top: 1rem;
+}
+
+#addReviewForm input,
+#addReviewForm textarea {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.rating {
+    margin-bottom: 0.5rem;
+}
