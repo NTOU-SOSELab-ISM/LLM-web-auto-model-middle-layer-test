@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程評價網 - 討論區</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <i class="fas fa-graduation-cap"></i>
+                <span>課程評價網</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">課程資訊查詢區</a>
+            <a href="discussion.html" class="active">討論區</a>
+        </nav>
+    </header>
+    <main>
+        <section class="chat-room">
+            <div id="chatMessages">
+                <!-- 聊天訊息將由 JavaScript 動態生成 -->
+            </div>
+            <div class="chat-input">
+                <input type="color" id="colorPicker" value="#000000">
+                <input type="text" id="nicknameInput" placeholder="輸入暱稱">
+                <input type="text" id="messageInput" placeholder="輸入訊息">
+                <button id="sendButton">發送</button>
+            </div>
+        </section>
+    </main>
+    <script src="discussion.js"></script>
+</body>
+</html>

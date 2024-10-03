@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "name": "線性代數",
+    "teacher": "張教授",
+    "ratings": {
+      "coolness": 3.5,
+      "grading": 4.2,
+      "difficulty": 3.8
+    },
+    "reviews": [
+      {
+        "username": "學生A",
+        "content": "課程內容豐富，但作業量較大。",
+        "ratings": {
+          "coolness": 3,
+          "grading": 4,
+          "difficulty": 4
+        }
+      },
+      {
+        "username": "學生B",
+        "content": "老師講解清楚，很容易理解。",
+        "ratings": {
+          "coolness": 4,
+          "grading": 5,
+          "difficulty": 3
+        }
+      },
+      {
+        "username": "學生C",
+        "content": "考試有點難，但整體來說是很好的課程。",
+        "ratings": {
+          "coolness": 3,
+          "grading": 4,
+          "difficulty": 5
+        }
+      },
+      {
+        "username": "學生D",
+        "content": "老師很有耐心，願意回答問題。",
+        "ratings": {
+          "coolness": 4,
+          "grading": 4,
+          "difficulty": 3
+        }
+      },
+      {
+        "username": "學生E",
+        "content": "課程內容實用，對未來學習很有幫助。",
+        "ratings": {
+          "coolness": 4,
+          "grading": 4,
+          "difficulty": 4
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "程式設計導論",
+    "teacher": "李教授",
+    "ratings": {
+      "coolness": 4.0,
+      "grading": 3.8,
+      "difficulty": 3.5
+    },
+    "reviews": [
+      {
+        "username": "學生F",
+        "content": "很適合初學者的課程，老師講解淺顯易懂。",
+        "ratings": {
+          "coolness": 5,
+          "grading": 4,
+          "difficulty": 3
+        }
+      },
+      {
+        "username": "學生G",
+        "content": "專案作業很有趣，學到很多實用的技能。",
+        "ratings": {
+          "coolness": 4,
+          "grading": 4,
+          "difficulty": 4
+        }
+      },
+      {
+        "username": "學生H",
+        "content": "課程節奏稍快，但內容很充實。",
+        "ratings": {
+          "coolness": 3,
+          "grading": 3,
+          "difficulty": 4
+        }
+      },
+      {
+        "username": "學生I",
+        "content": "老師提供了很多課外資源，對自學很有幫助。",
+        "ratings": {
+          "coolness": 4,
+          "grading": 4,
+          "difficulty": 3
+        }
+      },
+      {
+        "username": "學生J",
+        "content": "課程安排合理，從基礎到進階都有涵蓋。",
+        "ratings": {
+          "coolness": 4,
+          "grading": 4,
+          "difficulty": 4
+        }
+      }
+    ]
+  }
+]
