@@ -11,6 +11,11 @@ function initializeSearchPage() {
     const reviewsDisplay = document.getElementById('reviewsDisplay');
     let selectedAttractionId = null;
 
+    // 初始化時，給reviewForm中的dataset添加初始值
+    reviewForm.dataset.scenery = 0;
+    reviewForm.dataset.service = 0;
+    reviewForm.dataset.satisfaction = 0;
+
     // 渲染景點Card
     function renderAttractions(filter = '') {
         resultsPanel.innerHTML = '';
@@ -27,6 +32,7 @@ function initializeSearchPage() {
             card.className = 'card';
             card.dataset.id = attr.id;
 
+            const commentCount = attr.comments.length;
             card.innerHTML = `
                 <h3>${attr.name}</h3>
                 <div class="region">${attr.region}</div>
@@ -35,13 +41,17 @@ function initializeSearchPage() {
                     <div><span class="label">服務評分：</span><span class="stars">${generateStars(attr.rating.service)}</span></div>
                     <div><span class="label">整體滿意度：</span><span class="stars">${generateStars(attr.rating.satisfaction)}</span></div>
                 </div>
-                <div class="popularity"><img src="popularity.png" alt="人氣"> ${attr.popularity}</div>
+                <div class="popularity">人氣：${commentCount} 🧑‍🤝‍🧑</div>
             `;
             resultsPanel.appendChild(card);
         });
+
+        if (resultsPanel.childElementCount === 0) {
+            resultsPanel.innerHTML = '<p>沒有符合搜尋條件的結果。</p>';
+        }
     }
 
-    // 生成星星
+    // 生成星星，根據評分生成對應數量的實心和空心星星
     function generateStars(count) {
         let stars = '';
         for (let i = 0; i < 5; i++) {
@@ -74,22 +84,25 @@ function initializeSearchPage() {
         reviewForm.classList.toggle('hidden');
     });
 
-    // 星星選擇
-    reviewForm.addEventListener('click', (e) => {
-        if (e.target.tagName === 'SPAN') {
-            const type = e.target.parentElement.parentElement.dataset.type;
-            const stars = e.target.parentElement.children;
-            let rating = 0;
-            for (let i = 0; i <= Array.from(stars).indexOf(e.target); i++) {
-                stars[i].textContent = '★';
-                rating++;
-            }
-            for (let i = rating; i < 5; i++) {
-                stars[i].textContent = '☆';
-            }
-            reviewForm.dataset[type] = rating;
+// 星星選擇
+reviewForm.addEventListener('click', (e) => {
+    if (e.target.tagName === 'SPAN') {
+        const type = e.target.parentElement.dataset.type; // 修正此行
+        const stars = e.target.parentElement.children;
+        let rating = 0;
+        for (let i = 0; i <= Array.from(stars).indexOf(e.target); i++) {
+            stars[i].textContent = '★';
+            rating++;
         }
-    });
+        for (let i = rating; i < 5; i++) {
+            stars[i].textContent = '☆';
+        }
+        // 更新 dataset 中的評分
+        reviewForm.dataset[type] = rating;  // 確保評分更新正確
+    }
+});
+
+
 
     // 提交評論
     submitReview.addEventListener('click', () => {
@@ -98,6 +111,10 @@ function initializeSearchPage() {
         const scenery = parseInt(reviewForm.dataset.scenery) || 0;
         const service = parseInt(reviewForm.dataset.service) || 0;
         const satisfaction = parseInt(reviewForm.dataset.satisfaction) || 0;
+
+        console.log('Scenery Rating:', scenery); // 測試輸出，確認值是否正確
+        console.log('Service Rating:', service); // 測試輸出，確認值是否正確
+        console.log('Satisfaction Rating:', satisfaction); // 測試輸出，確認值是否正確
 
         if (!username || !comment) {
             alert('請填寫所有欄位');
@@ -126,7 +143,7 @@ function initializeSearchPage() {
         localStorage.setItem('attractions', JSON.stringify(attractions));
         renderAttractions(searchInput.value.trim());
         renderReviews();
-        reviewForm.reset();
+        // reviewForm.reset();
         reviewForm.dataset.scenery = 0;
         reviewForm.dataset.service = 0;
         reviewForm.dataset.satisfaction = 0;
@@ -150,6 +167,11 @@ function initializeSearchPage() {
                 commentDiv.innerHTML = `
                     <h4>${c.username} <span class="comment-time">${c.time}</span></h4>
                     <p class="comment-text">${c.comment}</p>
+                    <div class="ratings">
+                        <div><span class="label">景色評分：</span><span class="stars">${generateStars(c.rating.scenery)}</span></div>
+                        <div><span class="label">服務評分：</span><span class="stars">${generateStars(c.rating.service)}</span></div>
+                        <div><span class="label">整體滿意度：</span><span class="stars">${generateStars(c.rating.satisfaction)}</span></div>
+                    </div>
                 `;
                 reviewsDisplay.appendChild(commentDiv);
             });
@@ -159,6 +181,10 @@ function initializeSearchPage() {
     // 初始渲染
     renderAttractions();
 }
+
+
+
+
 
 // 初始化討論區
 function initializeDiscussionPage() {

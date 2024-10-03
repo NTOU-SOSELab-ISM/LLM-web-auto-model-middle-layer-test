@@ -21,8 +21,7 @@ header {
 }
 
 .logo-icon {
-    width: 40px;
-    height: 40px;
+    font-size: 1.5em;
     margin-right: 10px;
 }
 
@@ -94,10 +93,19 @@ header {
 .content {
     display: flex;
     padding: 20px;
+    height: calc(100vh - 60px);
+}
+
+.left-panel, .right-panel {
+    width: 50%;
+    overflow-y: auto;
+    background-color: #e6f7ff;
+    padding: 20px;
+    border: 1px solid #999;
+    border-radius: 10px;
 }
 
 .left-panel {
-    width: 60%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -108,9 +116,9 @@ header {
     border: 2px solid transparent;
     border-radius: 10px;
     padding: 15px;
-    width: calc(50% - 20px);
+    width: 100%;
     cursor: pointer;
-    transition: border 0.3s;
+    transition: border 0.3s, height 0.3s;
 }
 
 .card.selected {
@@ -145,6 +153,13 @@ header {
     color: gold;
     margin-right: 2px;
 }
+.stars span {
+    font-size: 1.2em;
+    color: gold;
+    cursor: pointer;
+}
+
+
 
 .card .popularity {
     display: flex;
@@ -159,9 +174,13 @@ header {
     margin-right: 5px;
 }
 
+.card .popularity .icon {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
 /* Right Panel */
 .right-panel {
-    width: 40%;
     padding-left: 20px;
     border-left: 1px solid #ccc;
 }
@@ -251,6 +270,7 @@ header {
     font-size: 0.8em;
     color: #666;
 }
+
 
 /* Discussion Section */
 .discussion-section {

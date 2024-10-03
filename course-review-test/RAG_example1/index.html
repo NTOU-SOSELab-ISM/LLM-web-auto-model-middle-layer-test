@@ -8,7 +8,7 @@
 <body>
     <header>
         <div class="header-left">
-            <img src="icon.png" alt="Icon" class="logo-icon">
+            <span class="logo-icon">🗺️</span>
             <span class="site-title">旅遊景點評論網</span>
         </div>
         <div class="header-right">
@@ -42,15 +42,21 @@
                 <textarea id="comment" placeholder="輸入評論"></textarea>
                 <div class="rating">
                     <label>景色評分：</label>
-                    <div class="stars" data-type="scenery"></div>
+                    <div class="stars" data-type="scenery">
+                        <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+                    </div>
                 </div>
                 <div class="rating">
                     <label>服務評分：</label>
-                    <div class="stars" data-type="service"></div>
+                    <div class="stars" data-type="service">
+                        <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+                    </div>
                 </div>
                 <div class="rating">
                     <label>整體滿意度：</label>
-                    <div class="stars" data-type="satisfaction"></div>
+                    <div class="stars" data-type="satisfaction">
+                        <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+                    </div>
                 </div>
                 <button id="submitReview">提交</button>
             </div>
@@ -63,41 +69,13 @@
     <script src="script.js"></script>
     <script>
         // 初始化景點資訊
-        const attractionsData = [
-            {
-                "id": 1,
-                "name": "台北101",
-                "region": "台北市",
-                "rating": {
-                    "scenery": 4,
-                    "service": 5,
-                    "satisfaction": 5
-                },
-                "popularity": 5000,
-                "comments": [
-                    {
-                        "username": "Alice",
-                        "comment": "景色非常壯觀，服務也很好！",
-                        "rating": {
-                            "scenery": 5,
-                            "service": 5,
-                            "satisfaction": 5
-                        },
-                        "time": "2024-04-01 10:00"
-                    },
-                    // 其他評論...
-                ]
-            },
-            // 至少六個景點...
-        ];
-
-        // 檢查並初始化localStorage
-        if (!localStorage.getItem('attractions')) {
-            localStorage.setItem('attractions', JSON.stringify(attractionsData));
-        }
-
-        // 呼叫初始化函式
-        initializeSearchPage();
+        fetch('data/attractions.json')
+            .then(response => response.json())
+            .then(data => {
+                localStorage.setItem('attractions', JSON.stringify(data));
+                initializeSearchPage();
+            })
+            .catch(error => console.error('無法載入景點資訊:', error));
     </script>
 </body>
 </html>

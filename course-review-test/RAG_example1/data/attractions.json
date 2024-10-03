@@ -83,8 +83,109 @@
                 },
                 "time": "2024-04-06 08:30"
             },
-            // 其他評論...
+            {
+                "username": "Grace",
+                "comment": "搭船遊湖很有趣。",
+                "rating": {
+                    "scenery": 4,
+                    "service": 4,
+                    "satisfaction": 4
+                },
+                "time": "2024-04-07 10:00"
+            },
+            {
+                "username": "Henry",
+                "comment": "美食選擇多樣。",
+                "rating": {
+                    "scenery": 4,
+                    "service": 5,
+                    "satisfaction": 4
+                },
+                "time": "2024-04-08 12:00"
+            },
+            {
+                "username": "Ivy",
+                "comment": "交通不便利，需自行開車。",
+                "rating": {
+                    "scenery": 5,
+                    "service": 3,
+                    "satisfaction": 4
+                },
+                "time": "2024-04-09 14:00"
+            },
+            {
+                "username": "Jack",
+                "comment": "住宿選擇有限。",
+                "rating": {
+                    "scenery": 4,
+                    "service": 3,
+                    "satisfaction": 3
+                },
+                "time": "2024-04-10 16:00"
+            }
         ]
     },
-    // 至少六個景點...
+    {
+        "id": 3,
+        "name": "墾丁",
+        "region": "屏東縣",
+        "rating": {
+            "scenery": 4,
+            "service": 3,
+            "satisfaction": 4
+        },
+        "popularity": 2000,
+        "comments": [
+            {
+                "username": "Kevin",
+                "comment": "海灘很美，適合玩水。",
+                "rating": {
+                    "scenery": 5,
+                    "service": 4,
+                    "satisfaction": 5
+                },
+                "time": "2024-04-11 08:30"
+            },
+            {
+                "username": "Lily",
+                "comment": "水上活動很刺激。",
+                "rating": {
+                    "scenery": 4,
+                    "service": 3,
+                    "satisfaction": 4
+                },
+                "time": "2024-04-12 10:00"
+            },
+            {
+                "username": "Mike",
+                "comment": "太陽很大，要做好防曬。",
+                "rating": {
+                    "scenery": 4,
+                    "service": 3,
+                    "satisfaction": 4
+                },
+                "time": "2024-04-13 12:00"
+            },
+            {
+                "username": "Nancy",
+                "comment": "夜市很熱鬧。",
+                "rating": {
+                    "scenery": 3,
+                    "service": 3,
+                    "satisfaction": 3
+                },
+                "time": "2024-04-14 14:00"
+            },
+            {
+                "username": "Oscar",
+                "comment": "交通不便利，需自行開車。",
+                "rating": {
+                    "scenery": 4,
+                    "service": 3,
+                    "satisfaction": 4
+                },
+                "time": "2024-04-15 16:00"
+            }
+        ]
+    }
 ]
