@@ -239,8 +239,243 @@ Feature: Course Review Website
 修正以以上錯誤並給我完整程式碼
 
 ## Result8
-
-完成所有需求
+雖然沒有給我完整程式碼，只給了我部份的js code，但是已經修正了所有錯誤，完成所有需求
 
 ![alt text](result8.png)
 
+# 產生mermaid的prompts
+
+## Prompt1
+
+根據以下的使用者需求和符合此需求所產生的程式碼產生出程式碼對應需求的mermaid 描述語言:
+`gherkin.md` + `index.html` + `discussion.html` + `script.js` + `style.css`
+
+## Result1
+
+無法顯示，語法錯誤
+
+```mermaid
+flowchart TD
+    A[Course Review Website]
+    
+    subgraph Header_Navigation
+    B1[Click on "課程資訊查詢區"]
+    B2[Click on "討論區"]
+    B1 --> B3[Redirect to "課程資訊查詢區" Page]
+    B2 --> B4[Redirect to "討論區" Page]
+    end
+    
+    subgraph Course_Info_Area
+    C1[Display Header with Dark Grey Background]
+    C2[Search Bar with Filters]
+    C3[Display Course Cards]
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4[Click on a Course Card]
+    C4 --> C5[Highlight Selected Course Card]
+    C5 --> C6[Show "新增課程評論" Button and Existing Reviews]
+    C6 --> C7[Submit New Review and Update Review List]
+    end
+    
+    subgraph Discussion_Area
+    D1[Display Header with Dark Grey Background]
+    D2[Chatbox Area]
+    D2 --> D3[Send Messages with Nickname and Color]
+    end
+    
+    subgraph Fake_Data
+    E1[Load Fake Data for Course Info]
+    E2[Load Fake Data for Discussion Area]
+    E1 --> C3
+    E2 --> D2
+    end
+
+    A --> Header_Navigation
+    A --> Course_Info_Area
+    A --> Discussion_Area
+    A --> Fake_Data
+```
+
+## Prompt2
+
+無法顯示，有語法錯誤，重新生成
+
+## Result2
+
+```mermaid
+flowchart TD
+    A[Course Review Website]
+
+    subgraph Header_Navigation
+        B1[Click on "課程資訊查詢區"]
+        B2[Click on "討論區"]
+        B1 --> B3[Redirect to "課程資訊查詢區"]
+        B2 --> B4[Redirect to "討論區"]
+    end
+
+    subgraph Course_Info_Area
+        C1[Display Header with Dark Grey Background]
+        C2[Show Search Bar with Filters]
+        C3[Display Course Cards]
+        C1 --> C2
+        C2 --> C3
+        C3 --> C4[Click on a Course Card]
+        C4 --> C5[Highlight Selected Course Card]
+        C5 --> C6[Show "新增課程評論" Button]
+        C6 --> C7[Submit New Review and Update Review List]
+    end
+
+    subgraph Discussion_Area
+        D1[Display Header with Dark Grey Background]
+        D2[Show Chatbox]
+        D2 --> D3[Send Message with Nickname and Color]
+    end
+
+    subgraph Fake_Data
+        E1[Load Fake Data for Course Info]
+        E2[Load Fake Data for Discussion Area]
+        E1 --> C3
+        E2 --> D2
+    end
+
+    A --> Header_Navigation
+    A --> Course_Info_Area
+    A --> Discussion_Area
+    A --> Fake_Data
+```
+
+還是一樣無法顯示
+
+## Prompt3
+
+還是一樣無法顯示
+
+## Result3
+
+
+還是一樣無法顯示，語法錯誤
+```mermaid
+graph TD
+    A[課程評價網]
+
+    %% Header Navigation
+    subgraph Header_Navigation
+        B1[點擊 "課程資訊查詢區"]
+        B2[點擊 "討論區"]
+        B1 --> B3[重定向到 "課程資訊查詢區" 頁面]
+        B2 --> B4[重定向到 "討論區" 頁面]
+    end
+
+    %% Course Info Area
+    subgraph Course_Info_Area
+        C1[顯示具有深灰背景的標頭]
+        C2[顯示搜尋欄及篩選選項]
+        C3[顯示課程資訊卡片]
+        C4[點擊課程卡片]
+        C5[高亮顯示選中的課程卡片]
+        C6[顯示 "新增課程評論" 按鈕及現有評論]
+        C7[提交新評論並更新評論列表]
+
+        C1 --> C2
+        C2 --> C3
+        C3 --> C4
+        C4 --> C5
+        C5 --> C6
+        C6 --> C7
+    end
+
+    %% Discussion Area
+    subgraph Discussion_Area
+        D1[顯示具有深灰背景的標頭]
+        D2[顯示聊天室區域]
+        D3[發送帶有暱稱和顏色的訊息]
+
+        D1 --> D2
+        D2 --> D3
+    end
+
+    %% Fake Data Initialization
+    subgraph Fake_Data
+        E1[載入課程資訊的假資料]
+        E2[載入討論區的假資料]
+        E1 --> C3
+        E2 --> D2
+    end
+
+    %% Main Connections
+    A --> Header_Navigation
+    A --> Course_Info_Area
+    A --> Discussion_Area
+    A --> Fake_Data
+
+```
+
+## Prompt4
+
+還是一樣無法顯示，語法錯誤
+
+Error: Error: Parse error on line 6:
+...tion B1[點擊 "課程資訊查詢區"] B2
+----------------------^
+Expecting 'SQE', 'DOUBLECIRCLEEND', 'PE', '-)', 'STADIUMEND', 'SUBROUTINEEND', 'PIPE', 'CYLINDEREND', 'DIAMOND_STOP', 'TAGEND', 'TRAPEND', 'INVTRAPEND', 'UNICODE_TEXT', 'TEXT', 'TAGSTART', got 'STR'
+
+
+## Result4
+
+```mermaid
+graph TD
+    A[課程評價網]
+
+    %% Header Navigation
+    subgraph Header_Navigation
+        B1[點擊 課程資訊查詢區]
+        B2[點擊 討論區]
+        B1 --> B3[重定向到 課程資訊查詢區]
+        B2 --> B4[重定向到 討論區]
+    end
+
+    %% Course Info Area
+    subgraph Course_Info_Area
+        C1[顯示具有深灰背景的標頭]
+        C2[顯示搜尋欄及篩選選項]
+        C3[顯示課程資訊卡片]
+        C4[點擊課程卡片]
+        C5[高亮顯示選中的課程卡片]
+        C6[顯示 新增課程評論 按鈕]
+        C7[提交新評論並更新評論列表]
+
+        C1 --> C2
+        C2 --> C3
+        C3 --> C4
+        C4 --> C5
+        C5 --> C6
+        C6 --> C7
+    end
+
+    %% Discussion Area
+    subgraph Discussion_Area
+        D1[顯示具有深灰背景的標頭]
+        D2[顯示聊天室區域]
+        D3[發送帶有暱稱和顏色的訊息]
+
+        D1 --> D2
+        D2 --> D3
+    end
+
+    %% Fake Data Initialization
+    subgraph Fake_Data
+        E1[載入課程資訊的假資料]
+        E2[載入討論區的假資料]
+        E1 --> C3
+        E2 --> D2
+    end
+
+    %% Main Connections
+    A --> Header_Navigation
+    A --> Course_Info_Area
+    A --> Discussion_Area
+    A --> Fake_Data
+
+```
+
+結果正常顯示
