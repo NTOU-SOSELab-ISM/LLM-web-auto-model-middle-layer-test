@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程評價網 - 課程資訊查詢區</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <span class="logo-icon">📘</span>
+            <span class="site-title">課程評價網</span>
+        </div>
+        <div class="header-right">
+            <a href="index.html" class="nav-link active">課程資訊查詢區</a>
+            <a href="discussion.html" class="nav-link">討論區</a>
+        </div>
+    </header>
+
+    <div class="search-section">
+        <h2>使用關鍵字查詢</h2>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="輸入關鍵字...">
+            <select id="searchType">
+                <option value="course">依課名查詢</option>
+                <option value="teacher">依老師名字查詢</option>
+            </select>
+            <button id="searchButton">搜尋</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="left-panel" id="resultsPanel">
+            <!-- 課程資訊將動態生成 -->
+        </div>
+        <div class="right-panel" id="detailPanel">
+            <button id="addReviewButton" class="hidden">新增課程評論</button>
+            <div id="reviewForm" class="hidden">
+                <h3>新增評論</h3>
+                <input type="text" id="username" placeholder="輸入使用者名稱">
+                <textarea id="comment" placeholder="輸入評論"></textarea>
+                <div class="rating">
+                    <label>課程涼度：</label>
+                    <div class="stars" data-type="coolness">
+                        <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+                    </div>
+                </div>
+                <div class="rating">
+                    <label>給分甜度：</label>
+                    <div class="stars" data-type="grading">
+                        <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+                    </div>
+                </div>
+                <div class="rating">
+                    <label>考試難度：</label>
+                    <div class="stars" data-type="difficulty">
+                        <span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span><span class="star">☆</span>
+                    </div>
+                </div>
+                <button id="submitReview">提交</button>
+            </div>
+            <div id="reviewsDisplay">
+                <!-- 評論將動態生成 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

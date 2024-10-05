@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.site-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header-right .nav-link {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.header-right .nav-link.active {
+    color: #ffcc00;
+}
+
+/* Layout */
+body, html {
+    height: 100%;
+    overflow: hidden; /* 防止整個頁面滾動 */
+}
+
+.search-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-top: 60px; /* 預留 header 空間 */
+}
+
+.content {
+    display: flex;
+    height: calc(100vh - 140px);
+    margin: 20px;
+}
+
+.left-panel, .right-panel {
+    background-color: #e6e6e6;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto; /* 區塊內部滾動 */
+    flex: 1; /* 確保左右兩邊均分空間 */
+}
+
+.left-panel {
+    margin-right: 10px;
+}
+
+.right-panel {
+    margin-left: 10px;
+}
+
+/* 修正 padding 和邊緣問題 */
+.left-panel, .right-panel {
+    padding-bottom: 20px; /* 確保底部內容不被切掉 */
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: border 0.3s ease;
+}
+
+.card.selected {
+    border: 2px solid #333;
+}
+
+.stars {
+    color: gold;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Chatbox */
+.chatbox {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    height: calc(100vh - 220px); /* 預留 header 和其他區域空間 */
+    overflow-y: scroll;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input-area input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+}

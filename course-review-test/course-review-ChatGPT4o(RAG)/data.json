@@ -1,0 +1,205 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name": "數學課程",
+            "teacher": "王老師",
+            "coolness": 4,
+            "grading": 5,
+            "difficulty": 3,
+            "commentsCount": 6,
+            "comments": [
+                {
+                    "username": "Alice",
+                    "comment": "課程非常實用。",
+                    "coolness": 5,
+                    "grading": 4,
+                    "difficulty": 2,
+                    "time": "2024-10-01 10:00"
+                },
+                {
+                    "username": "Bob",
+                    "comment": "教學方式很有趣。",
+                    "coolness": 4,
+                    "grading": 5,
+                    "difficulty": 3,
+                    "time": "2024-10-01 11:00"
+                },
+                {
+                    "username": "Charlie",
+                    "comment": "很容易懂。",
+                    "coolness": 5,
+                    "grading": 5,
+                    "difficulty": 1,
+                    "time": "2024-10-02 09:00"
+                },
+                {
+                    "username": "Daisy",
+                    "comment": "課程資訊豐富。",
+                    "coolness": 4,
+                    "grading": 3,
+                    "difficulty": 3,
+                    "time": "2024-10-03 14:30"
+                },
+                {
+                    "username": "Ethan",
+                    "comment": "老師講解非常清晰。",
+                    "coolness": 4,
+                    "grading": 4,
+                    "difficulty": 2,
+                    "time": "2024-10-04 16:15"
+                },
+                {
+                    "username": "Fiona",
+                    "comment": "內容非常扎實。",
+                    "coolness": 3,
+                    "grading": 5,
+                    "difficulty": 4,
+                    "time": "2024-10-05 08:20"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "物理課程",
+            "teacher": "李老師",
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 5,
+            "commentsCount": 5,
+            "comments": [
+                {
+                    "username": "Gary",
+                    "comment": "物理概念講得很清楚。",
+                    "coolness": 4,
+                    "grading": 4,
+                    "difficulty": 5,
+                    "time": "2024-10-02 12:00"
+                },
+                {
+                    "username": "Helen",
+                    "comment": "課程節奏稍微快。",
+                    "coolness": 3,
+                    "grading": 4,
+                    "difficulty": 5,
+                    "time": "2024-10-03 10:15"
+                },
+                {
+                    "username": "Ivy",
+                    "comment": "老師很有耐心。",
+                    "coolness": 5,
+                    "grading": 4,
+                    "difficulty": 4,
+                    "time": "2024-10-04 11:20"
+                },
+                {
+                    "username": "Jack",
+                    "comment": "課堂討論非常有幫助。",
+                    "coolness": 4,
+                    "grading": 4,
+                    "difficulty": 4,
+                    "time": "2024-10-05 15:45"
+                },
+                {
+                    "username": "Kelly",
+                    "comment": "內容非常實用。",
+                    "coolness": 4,
+                    "grading": 5,
+                    "difficulty": 5,
+                    "time": "2024-10-06 09:50"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "化學課程",
+            "teacher": "陳老師",
+            "coolness": 3,
+            "grading": 4,
+            "difficulty": 3,
+            "commentsCount": 6,
+            "comments": [
+                {
+                    "username": "Linda",
+                    "comment": "課程非常有意思。",
+                    "coolness": 4,
+                    "grading": 3,
+                    "difficulty": 3,
+                    "time": "2024-10-01 08:00"
+                },
+                {
+                    "username": "Mark",
+                    "comment": "講解很清楚。",
+                    "coolness": 3,
+                    "grading": 4,
+                    "difficulty": 3,
+                    "time": "2024-10-01 09:45"
+                },
+                {
+                    "username": "Nancy",
+                    "comment": "有時候有點難懂。",
+                    "coolness": 3,
+                    "grading": 4,
+                    "difficulty": 4,
+                    "time": "2024-10-02 14:00"
+                },
+                {
+                    "username": "Oliver",
+                    "comment": "老師互動很好。",
+                    "coolness": 3,
+                    "grading": 5,
+                    "difficulty": 2,
+                    "time": "2024-10-03 16:15"
+                },
+                {
+                    "username": "Paul",
+                    "comment": "課程內容豐富。",
+                    "coolness": 4,
+                    "grading": 4,
+                    "difficulty": 3,
+                    "time": "2024-10-04 10:00"
+                },
+                {
+                    "username": "Quincy",
+                    "comment": "有很多實驗。",
+                    "coolness": 5,
+                    "grading": 5,
+                    "difficulty": 3,
+                    "time": "2024-10-05 11:30"
+                }
+            ]
+        }
+    ],
+    "discussions": [
+        {
+            "username": "User1",
+            "color": "#ff0000",
+            "message": "這個網站真的很好用！",
+            "time": "2024-10-01 08:00"
+        },
+        {
+            "username": "User2",
+            "color": "#0000ff",
+            "message": "數學課程真的很不錯。",
+            "time": "2024-10-01 09:30"
+        },
+        {
+            "username": "User3",
+            "color": "#00ff00",
+            "message": "有沒有人有物理課程的資料？",
+            "time": "2024-10-02 12:00"
+        },
+        {
+            "username": "User4",
+            "color": "#ff00ff",
+            "message": "化學課程難度不低。",
+            "time": "2024-10-02 14:30"
+        },
+        {
+            "username": "User5",
+            "color": "#ffa500",
+            "message": "學習進度有點快。",
+            "time": "2024-10-03 15:00"
+        }
+    ]
+}
