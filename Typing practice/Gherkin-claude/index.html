@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高級打字練習網站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button id="background-toggle">切換背景</button>
+        <select id="difficulty-selector">
+            <option value="easy">簡單</option>
+            <option value="medium">中等</option>
+            <option value="hard">困難</option>
+        </select>
+        <select id="length-selector">
+            <option value="short">短文本</option>
+            <option value="medium">中等文本</option>
+            <option value="long">長文本</option>
+        </select>
+        <div id="stats">
+            <span id="timer">時間: 00:00</span>
+            <span id="wpm">WPM: 0</span>
+            <span id="accuracy">準確率: 100%</span>
+        </div>
+        <input type="text" id="input-box" placeholder="開始輸入...">
+        <div id="text-display"></div>
+        <div id="virtual-keyboard"></div>
+    </div>
+    <div id="results">
+        <h2>練習結果</h2>
+        <p id="result-time"></p>
+        <p id="result-words"></p>
+        <p id="result-wpm"></p>
+        <p id="result-accuracy"></p>
+        <p id="result-errors"></p>
+        <button id="close-results">關閉</button>
+    </div>
+    <audio id="keySound" src="https://assets.mixkit.co/active_storage/sfx/2870/2870-preview.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
