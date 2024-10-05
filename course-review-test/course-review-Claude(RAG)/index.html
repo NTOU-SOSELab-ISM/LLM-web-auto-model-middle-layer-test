@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程評價網 - 課程資訊查詢區</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="icon">📚</span>
+            <span>課程評價網</span>
+        </div>
+        <nav>
+            <a href="index.html" class="active">課程資訊查詢區</a>
+            <a href="discussion.html">討論區</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h2>使用關鍵字查詢</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="輸入關鍵字...">
+                <div class="search-options">
+                    <label>
+                        <input type="radio" name="searchType" value="course" checked> 依課名查詢
+                    </label>
+                    <label>
+                        <input type="radio" name="searchType" value="teacher"> 依老師名字查詢
+                    </label>
+                </div>
+                <button id="searchButton">搜索</button>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="course-list" id="courseList">
+                <!-- 課程卡片將通過 JavaScript 動態生成 -->
+            </div>
+            <div class="course-details" id="courseDetails">
+                <!-- 課程詳情將通過 JavaScript 動態生成 -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
