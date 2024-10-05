@@ -2,15 +2,14 @@
 
 ## Prompt 1
 
-幫我依照website_requirement.md需求生成網頁，並給我完整程式碼。
+幫我依照website_requirement.md的需求生成網頁，並給我完整程式碼。
 
 ![alt text](image.png)
 ![alt text](image-1.png)
 
 ## Prompt 2
 
-網頁有幾點需要做修改
-
+網頁有幾點需要做修改:
 1. 右上角的**Switch to Dark Mode**按鈕，在被按下之後，應該顯示**Switch to Light Mode**
 2. 在切換到**Dark Mode**時，無法看到鍵盤上的字母
 3. 需要在使用者按下鍵盤後，自動開始倒數計時。在完成文本後，自動停止計時，並顯示當下WPM

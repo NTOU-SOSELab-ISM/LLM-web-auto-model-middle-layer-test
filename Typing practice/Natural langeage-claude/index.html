@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打字練習網站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>打字練習網站</h1>
+            <button id="themeToggle">切換主題</button>
+        </header>
+        <div id="stats">
+            <div id="timer">已用時間: <span id="timeElapsed">0</span>秒</div>
+            <div id="wpm">WPM: <span id="wpmValue">0</span></div>
+            <div id="accuracy">準確率: <span id="accuracyValue">100</span>%</div>
+        </div>
+        <div id="difficultySelector">
+            <label for="difficulty">難度:</label>
+            <select id="difficulty">
+                <option value="easy">簡單</option>
+                <option value="medium">中等</option>
+                <option value="hard">困難</option>
+            </select>
+        </div>
+        <div id="textDisplay"></div>
+        <div id="inputArea">
+            <textarea id="userInput" rows="3" placeholder="開始打字..."></textarea>
+        </div>
+        <div id="keyboard"></div>
+        <button id="addCustomText">添加自定義文本</button>
+        <button id="toggleSound">聲音: 開</button>
+    </div>
+    <div id="customTextModal" class="modal">
+        <div class="modal-content">
+            <h2>添加自定義文本</h2>
+            <textarea id="customText" rows="5" placeholder="輸入自定義文本..."></textarea>
+            <button id="submitCustomText">完成</button>
+            <button id="cancelCustomText">取消</button>
+        </div>
+    </div>
+    <audio id="keySound" src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
