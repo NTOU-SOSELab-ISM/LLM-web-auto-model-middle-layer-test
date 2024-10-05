@@ -40,7 +40,7 @@ function displayCourses(coursesToShow) {
 
 // 生成星星評分
 function generateStars(rating) {
-    return `<div class="stars" data-rating="${Math.round(rating)}"></div>`;
+    return `<span class="stars" data-rating="${Math.round(rating)}"></span>`;
 }
 
 // 顯示課程詳情
@@ -61,15 +61,15 @@ function displayCourseDetails(course) {
             <textarea id="reviewContent" placeholder="輸入評論"></textarea>
             <div class="rating">
                 <label>課程涼度評分：</label>
-                <div class="stars" data-rating="0" data-category="coolness"></div>
+                <div class="stars-input" data-rating="coolness"></div>
             </div>
             <div class="rating">
                 <label>給分甜度評分：</label>
-                <div class="stars" data-rating="0" data-category="grading"></div>
+                <div class="stars-input" data-rating="grading"></div>
             </div>
             <div class="rating">
                 <label>考試難度評分：</label>
-                <div class="stars" data-rating="0" data-category="difficulty"></div>
+                <div class="stars-input" data-rating="difficulty"></div>
             </div>
             <button id="submitReview">提交評論</button>
         </div>
@@ -80,7 +80,8 @@ function displayCourseDetails(course) {
 
     document.getElementById('addReviewButton').addEventListener('click', toggleReviewForm);
     document.getElementById('submitReview').addEventListener('click', submitReview);
-    document.querySelectorAll('.stars').forEach(starsElement => {
+    document.querySelectorAll('.stars-input').forEach(starsElement => {
+        initializeStars(starsElement);
         starsElement.addEventListener('click', handleStarRating);
     });
 }
@@ -116,20 +117,33 @@ function toggleReviewForm() {
     }
 }
 
+// 初始化星星
+function initializeStars(starsElement) {
+    starsElement.innerHTML = '☆'.repeat(5);
+    starsElement.dataset.rating = '0';
+}
+
 // 處理星星評分
 function handleStarRating(event) {
-    const stars = event.currentTarget;
-    const rating = Math.floor((event.clientX - stars.getBoundingClientRect().left) / (stars.offsetWidth / 5)) + 1;
-    stars.dataset.rating = rating;
+    const starsElement = event.currentTarget;
+    const stars = starsElement.children;
+    const rating = Array.from(stars).indexOf(event.target) + 1;
+    updateStars(starsElement, rating);
+}
+
+// 更新星星顯示
+function updateStars(starsElement, rating) {
+    starsElement.innerHTML = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+    starsElement.dataset.rating = rating;
 }
 
 // 提交評論
 function submitReview() {
     const username = document.getElementById('reviewUsername').value;
     const content = document.getElementById('reviewContent').value;
-    const coolness = document.querySelector('.stars[data-category="coolness"]').dataset.rating;
-    const grading = document.querySelector('.stars[data-category="grading"]').dataset.rating;
-    const difficulty = document.querySelector('.stars[data-category="difficulty"]').dataset.rating;
+    const coolness = document.querySelector('.stars-input[data-rating="coolness"]').dataset.rating;
+    const grading = document.querySelector('.stars-input[data-rating="grading"]').dataset.rating;
+    const difficulty = document.querySelector('.stars-input[data-rating="difficulty"]').dataset.rating;
 
     if (!username || !content || coolness === '0' || grading === '0' || difficulty === '0') {
         alert('請填寫所有欄位');
@@ -150,6 +164,7 @@ function submitReview() {
     updateCourseRatings(currentCourse);
     saveCourses();
     displayCourseDetails(currentCourse);
+    updateCourseCard(currentCourse);
     toggleReviewForm();
 }
 
@@ -166,6 +181,23 @@ function updateCourseRatings(course) {
 // 計算平均值
 function average(arr) {
     return arr.reduce((a, b) => a + b, 0) / arr.length;
+}
+
+// 更新左側課程卡片
+function updateCourseCard(course) {
+    const courseCards = document.querySelectorAll('.course-card');
+    courseCards.forEach(card => {
+        if (card.querySelector('h3').textContent === course.name) {
+            card.innerHTML = `
+                <h3>${course.name}</h3>
+                <p>教師: ${course.teacher}</p>
+                <div>課程涼度: ${generateStars(course.ratings.coolness)}</div>
+                <div>給分甜度: ${generateStars(course.ratings.grading)}</div>
+                <div>考試難度: ${generateStars(course.ratings.difficulty)}</div>
+                <div>討論熱度: ${course.reviews.length} 🔥</div>
+            `;
+        }
+    });
 }
 
 // 保存課程數據

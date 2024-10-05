@@ -1,0 +1,350 @@
+[
+    {
+      "id": 1,
+      "name": "計算機科學導論",
+      "teacher": "王大明",
+      "ratings": {
+        "coolness": 4.2,
+        "grading": 3.8,
+        "difficulty": 3.5
+      },
+      "popularity": 15,
+      "reviews": [
+        {
+          "username": "學生A",
+          "content": "這門課非常有趣，老師講解清晰，作業適量。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 3
+          }
+        },
+        {
+          "username": "學生B",
+          "content": "課程內容豐富，但有時候作業有點多。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 3,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生C",
+          "content": "老師很有耐心，對新手很友善。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 3
+          }
+        },
+        {
+          "username": "學生D",
+          "content": "考試有點難，但整體來說是很棒的課程。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 3,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生E",
+          "content": "這門課對理解計算機科學基礎很有幫助。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "數據結構與算法",
+      "teacher": "李小芬",
+      "ratings": {
+        "coolness": 3.8,
+        "grading": 3.5,
+        "difficulty": 4.2
+      },
+      "popularity": 12,
+      "reviews": [
+        {
+          "username": "學生F",
+          "content": "課程內容很充實，但難度較高。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 3,
+            "difficulty": 5
+          }
+        },
+        {
+          "username": "學生G",
+          "content": "老師講解得很清楚，但作業量大。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 3,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生H",
+          "content": "這門課對編程能力提升很有幫助。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生I",
+          "content": "課程節奏快，需要課後多加複習。",
+          "ratings": {
+            "coolness": 3,
+            "grading": 3,
+            "difficulty": 5
+          }
+        },
+        {
+          "username": "學生J",
+          "content": "很有挑戰性的課程，學到很多。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "網絡安全基礎",
+      "teacher": "張三豐",
+      "ratings": {
+        "coolness": 4.5,
+        "grading": 4.0,
+        "difficulty": 3.8
+      },
+      "popularity": 18,
+      "reviews": [
+        {
+          "username": "學生K",
+          "content": "老師很幽默，課程內容很有趣。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 3
+          }
+        },
+        {
+          "username": "學生L",
+          "content": "實踐部分很有意思，學到很多實用技能。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生M",
+          "content": "老師經驗豐富，分享了很多業界案例。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生N",
+          "content": "作業設計得很有創意，很享受完成的過程。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 3
+          }
+        },
+        {
+          "username": "學生O",
+          "content": "這門課讓我對網絡安全產生了濃厚興趣。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "人工智能導論",
+      "teacher": "陳小紅",
+      "ratings": {
+        "coolness": 4.3,
+        "grading": 3.7,
+        "difficulty": 4.0
+      },
+      "popularity": 20,
+      "reviews": [
+        {
+          "username": "學生P",
+          "content": "課程內容非常前沿，老師講解深入淺出。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生Q",
+          "content": "作業很有挑戰性，但也很有趣。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 3,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生R",
+          "content": "這門課開闊了我的視野，對 AI 有了新的認識。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生S",
+          "content": "理論和實踐結合得很好，學到很多實用技能。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生T",
+          "content": "老師很有熱情，課堂氛圍很好。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "操作系統原理",
+      "teacher": "趙大力",
+      "ratings": {
+        "coolness": 3.5,
+        "grading": 3.2,
+        "difficulty": 4.5
+      },
+      "popularity": 10,
+      "reviews": [
+        {
+          "username": "學生U",
+          "content": "課程內容很深奧，需要下很多功夫。",
+          "ratings": {
+            "coolness": 3,
+            "grading": 3,
+            "difficulty": 5
+          }
+        },
+        {
+          "username": "學生V",
+          "content": "老師講解得很細緻，但作業很有挑戰性。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 3,
+            "difficulty": 5
+          }
+        },
+        {
+          "username": "學生W",
+          "content": "這門課讓我對計算機底層有了更深的理解。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 3,
+            "difficulty": 4
+          }
+        },
+        {
+          "username": "學生X",
+          "content": "課程很硬核，但學完後收穫很大。",
+          "ratings": {
+            "coolness": 3,
+            "grading": 3,
+            "difficulty": 5
+          }
+        },
+        {
+          "username": "學生Y",
+          "content": "老師很耐心，願意回答學生的各種問題。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "數據庫系統",
+      "teacher": "吳小凡",
+      "ratings": {
+        "coolness": 3.9,
+        "grading": 4.1,
+        "difficulty": 3.7
+      },
+      "popularity": 14,
+      "reviews": [
+        {
+          "username": "學生Z",
+          "content": "課程內容實用，對以後工作很有幫助。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 3
+          }
+        },
+        {
+          "username": "學生AA",
+          "content": "老師授課有趣，使枯燥的內容變得生動。",
+          "ratings": {
+            "coolness": 5,
+            "grading": 4,
+            "difficulty": 3
+          }
+        },
+        {
+          "username": "學生BB",
+          "content": "習題難度適中，很好地鞏固了所學知識。",
+          "ratings": {
+            "coolness": 4,
+            "grading": 4,
+            "difficulty": 4
+          }
+        },
+        {
+            "username": "學生CC",
+            "content": "課程節奏很好，容易跟上。",
+            "ratings": {
+                "coolness": 4,
+                "grading": 4,
+                "difficulty": 3
+            }
+        },
+        {
+            "username": "學生DD",
+            "content": "專案作業很有挑戰性，學到了實際應用知識。",
+            "ratings": {
+                "coolness": 4,
+                "grading": 4,
+                "difficulty": 4
+            }
+        }
+    ]
+  }
+]
