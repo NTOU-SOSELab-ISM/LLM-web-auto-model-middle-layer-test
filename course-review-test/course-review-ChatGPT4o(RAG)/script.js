@@ -1,9 +1,3 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//     initializeSearchPage();
-//     if (document.getElementById('chatbox')) {
-//         initializeDiscussionPage();
-//     }
-// });
 
 // 初始化課程資料
 const courseData = JSON.parse(localStorage.getItem('courses')) || [

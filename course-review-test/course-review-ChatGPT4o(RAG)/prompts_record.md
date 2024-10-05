@@ -82,7 +82,7 @@
 
 ## Result4
 
-遇到一個問題，他給的javascript不是全部的檔案，會省略掉重複的部分
+遇到一個問題，他給的javascript不是全部的檔案，會省略掉重複的部分，導致還是需要看程式碼去修改
 
 ![alt text](result4-1.png)
 
@@ -97,3 +97,92 @@
 ![alt text](result4-2.png)
 
 ![alt text](result4-3.png)
+
+# 產生mermaid的prompts
+
+## Prompt1
+
+根據以下的使用者需求和符合此需求所產生的程式碼產生出程式碼對應需求的mermaid 描述語言:
++ `user_prompts` + `index.html` + `discussion.html` + `script.js` + `style.css`
+
+## Result1
+
+```mermaid
+graph TD
+    subgraph Course Information Search
+        A1[User visits "課程資訊查詢區"]
+        A2[User sees search bar and inputs keyword]
+        A3[User selects search type: Course Name/Teacher Name]
+        A4[User clicks "Search" button]
+        A5[JavaScript filters courses by keyword and search type]
+        A6[Filtered course cards are displayed]
+        A7[User clicks a course card]
+        A8[Course reviews are shown on the right panel]
+        A9[User clicks "Add Review" button]
+        A10[Review form appears]
+        A11[User fills out and submits review]
+        A12[New review is displayed in the review list]
+        A13[Course reviews updated in JSON storage]
+        A14[User can scroll through course cards and reviews]
+        A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10 --> A11 --> A12 --> A13 --> A14
+    end
+    
+    subgraph Discussion Area
+        B1[User visits "討論區"]
+        B2[User sees existing messages in the chatbox]
+        B3[User enters nickname, selects color, and types a message]
+        B4[User clicks "Send" button or presses Enter]
+        B5[Message is added to the chatbox with timestamp and color]
+        B6[Chat history is stored and updated in JSON storage]
+        B7[User can scroll through chat history]
+        B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7
+    end
+
+    A1 -->|Click "討論區" in header| B1
+    B1 -->|Click "課程資訊查詢區" in header| A1
+```
+
+無法顯示結果，語法錯誤
+
+## Prompt2
+
+產生的Mermaid無法顯示出來，有語法錯誤，重新產生
+
+## Result2
+
+```mermaid
+graph TD
+    subgraph "課程資訊查詢區"
+        A1["使用者進入課程資訊查詢區"]
+        A2["使用者看到搜尋列並輸入關鍵字"]
+        A3["使用者選擇搜尋類型: 課程名稱/老師姓名"]
+        A4["使用者點擊'搜尋'按鈕"]
+        A5["JavaScript 依據關鍵字和搜尋類型篩選課程"]
+        A6["顯示篩選後的課程卡片"]
+        A7["使用者點擊一個課程卡片"]
+        A8["右側顯示該課程的評論"]
+        A9["使用者點擊'新增課程評論'按鈕"]
+        A10["顯示評論表單"]
+        A11["使用者填寫表單並提交評論"]
+        A12["顯示新評論於評論列表中"]
+        A13["JSON 儲存檔案更新"]
+        A14["使用者可以滾動查看課程卡片與評論"]
+        A1 --> A2 --> A3 --> A4 --> A5 --> A6 --> A7 --> A8 --> A9 --> A10 --> A11 --> A12 --> A13 --> A14
+    end
+    
+    subgraph "討論區"
+        B1["使用者進入討論區"]
+        B2["使用者看到現有的聊天訊息"]
+        B3["使用者輸入暱稱，選擇顏色，並輸入訊息"]
+        B4["使用者點擊'發送'按鈕或按下Enter"]
+        B5["訊息連同時間與顏色顯示在聊天框中"]
+        B6["聊天歷史訊息更新於 JSON 儲存檔案中"]
+        B7["使用者可以滾動查看聊天歷史"]
+        B1 --> B2 --> B3 --> B4 --> B5 --> B6 --> B7
+    end
+
+    A1 -->|"點擊 Header 中的 '討論區'"| B1
+    B1 -->|"點擊 Header 中的 '課程資訊查詢區'"| A1
+```
+
+結果正確
