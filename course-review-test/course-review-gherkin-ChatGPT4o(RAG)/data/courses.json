@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "微積分",
+        "teacher": "李教授",
+        "ratings": { "coolness": 4, "generosity": 5, "difficulty": 3 },
+        "popularity": 120,
+        "reviews": [
+            { "username": "小明", "comment": "老師講得很仔細，考試也不難。", "ratings": { "coolness": 4, "generosity": 5, "difficulty": 3 } }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "物理學",
+        "teacher": "張老師",
+        "ratings": { "coolness": 3, "generosity": 4, "difficulty": 4 },
+        "popularity": 80,
+        "reviews": []
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "username": "Alice",
+        "color": "#ff0000",
+        "message": "微積分這門課超好！",
+        "time": "2024-10-01 09:00"
+    },
+    {
+        "username": "Bob",
+        "color": "#0000ff",
+        "message": "有沒有人選物理學？",
+        "time": "2024-10-01 10:00"
+    }
+]
