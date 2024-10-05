@@ -1,0 +1,311 @@
+/* 全局樣式 */
+html, body {
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.calendar-icon {
+    margin-right: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input,
+.search-container select {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* 添加這一行 */
+    height: calc(100% - 70px); /* 假設 header 高度為 70px，根據實際情況調整 */
+    overflow: hidden; /* 防止出現滾動條 */
+}
+
+/* 左側邊欄樣式 */
+aside#sidebar {
+    background-color: #ecf0f1;
+    padding: 20px;
+    width: 250px;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mini-calendar {
+    margin-top: 20px;
+}
+
+#mini-calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#mini-calendar th,
+#mini-calendar td {
+    width: 14.28%;
+    text-align: center;
+    padding: 5px;
+}
+
+#mini-calendar th {
+    background-color: #bdc3c7;
+}
+
+#mini-calendar td {
+    cursor: pointer;
+}
+
+#mini-calendar td.today {
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 50%;
+}
+
+#mini-calendar td.selected {
+    background-color: #2980b9;
+    color: #fff;
+    border-radius: 50%;
+}
+
+#add-event-button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#add-event-button:hover {
+    background-color: #2980b9;
+}
+
+/* 右側主內容區 */
+main#main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+#today-todo {
+    margin-bottom: 20px;
+}
+
+#week-view {
+    width: 100%;
+}
+
+/* 搜索結果中的週標題樣式 */
+#week-view h2 {
+    margin-top: 20px;
+}
+
+
+.day-column {
+    flex: 1;
+    min-width: 100%; /* 在手機端佔滿寬度 */
+    margin: 5px 0; /* 調整間距 */
+}
+
+.day-column h3 {
+    margin-top: 0;
+}
+
+.event-card {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.event-card.work {
+    background-color: #3498db;
+}
+
+.event-card.personal {
+    background-color: #2ecc71;
+}
+
+.event-card.holiday {
+    background-color: #f1c40f;
+}
+
+.event-card:hover {
+    opacity: 0.8;
+}
+
+/* 模態框樣式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 400px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#save-button {
+    background-color: #3498db;
+    color: #fff;
+}
+
+#delete-button {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    aside#sidebar {
+        display: none;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* 動畫效果 */
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+/* 調整 week-container 的樣式 */
+.week-container {
+    margin-bottom: 20px;
+}
+
+/* 確保事件卡片單獨佔一行 */
+.week-container .event-card {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.modal-content form label,
+.modal-content form input,
+.modal-content form textarea,
+.modal-content form select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.modal-content form input,
+.modal-content form textarea,
+.modal-content form select {
+    padding: 8px;
+    box-sizing: border-box;
+}
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        height: calc(100% - 70px); /* 根據 header 的高度調整 */
+        overflow: hidden; /* 防止出現滾動條 */
+    }
+
+    aside#sidebar, main#main-content {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* 確保內容不超過視窗寬度 */
+    aside#sidebar {
+        display: block;
+        order: 1;
+    }
+
+    main#main-content {
+        order: 2;
+    }
+}
+/* 確保所有內容元素的寬度不超過父容器 */
+aside#sidebar, main#main-content, .day-column, .event-card {
+    max-width: 100%;
+    box-sizing: border-box;
+}
