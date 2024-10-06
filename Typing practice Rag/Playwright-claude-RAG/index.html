@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高級打字練習網站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button id="background-toggle" aria-label="切換背景顏色" data-testid="background-toggle">切換背景</button>
+        <select id="difficulty-selector" aria-label="選擇難度" data-testid="difficulty-selector">
+            <option value="easy">簡單</option>
+            <option value="medium">中等</option>
+            <option value="hard">困難</option>
+        </select>
+        <select id="length-selector" aria-label="選擇文本長度" data-testid="length-selector">
+            <option value="short">短文本</option>
+            <option value="medium">中等文本</option>
+            <option value="long">長文本</option>
+        </select>
+        <div id="stats">
+            <span id="timer" aria-live="polite" data-testid="timer">時間: 00:00</span>
+            <span id="wpm" aria-live="polite" data-testid="wpm">WPM: 0</span>
+            <span id="accuracy" aria-live="polite" data-testid="accuracy">準確率: 100%</span>
+        </div>
+        <input type="text" id="input-box" placeholder="開始輸入..." aria-label="輸入文字" data-testid="input-box">
+        <div id="text-display" aria-label="打字文本" data-testid="text-display"></div>
+        <div id="virtual-keyboard" aria-label="虛擬鍵盤" data-testid="virtual-keyboard"></div>
+    </div>
+    <div id="results" aria-label="練習結果" data-testid="results">
+        <h2>練習結果</h2>
+        <p id="result-time" data-testid="result-time"></p>
+        <p id="result-words" data-testid="result-words"></p>
+        <p id="result-wpm" data-testid="result-wpm"></p>
+        <p id="result-accuracy" data-testid="result-accuracy"></p>
+        <p id="result-errors" data-testid="result-errors"></p>
+        <button id="close-results" aria-label="關閉結果" data-testid="close-results">關閉</button>
+    </div>
+    <audio id="keySound" src="https://assets.mixkit.co/active_storage/sfx/2870/2870-preview.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

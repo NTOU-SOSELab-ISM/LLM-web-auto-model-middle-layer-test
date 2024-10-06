@@ -1,39 +1,3 @@
-# Use RAG to generate Playwright E2E test by Claude 3.5 Sonnet
-
-## Prompt 1
-
-- 這是一個打字練習網頁（**index.html style.css script.js**）與網頁需求書(**website_requirement.md**)，我想要使用**Playwright**進行端對端測試。
-- 我提供了兩個使用**Playwright**進行端對端測試的腳本範例(**Rag file(playwright).md**)。
-- 幫我學習範例中的腳本，使用Typescirpt生成測試腳本，並給我完整的程式碼。在html tag中含有**aria-label**與**data-testid**屬性，請盡量用**page.getByTestId()** 進行選擇，並註明現在的測試對象為何。
-
-## Prompt 2
-
-以下有幾點問題需要修改:
-- 在 _計時和WPM計算_ 測試中，WPM只計算正確的字數。當輸入錯誤的單字，WPM可能為0
-- 在 _難度級別功能_ 測試中，重新整理網頁會導致設定變回預設值，此網頁在選擇難易度後，會自動更新文本
-- 在 _準確率顯示_ 測試中，因為網站中的準確率不會即時更新，導致測試錯誤
-
-幫我改善以上幾點問題，並給我完整的測試腳本
-
-## Prompt 3
-
-以下有幾點問題需要修改:
-- 在 _計時和WPM計算_ 測試中，WPM的定義為**正確單字數/分鐘**，所以WPM只會因為時間增加而減少，不會因為輸入錯誤而減少
-- 在 _準確率顯示、結果顯示_ 測試中，不須按下 _Enter_ 提交輸入，系統會自動停止計時並顯示結果
-
-幫我改善以上幾點問題，並給我完整的測試腳本
-
-## Prompt 4
-
-以下有幾點問題需要修改:
-- _難度級別功能_ 測試: 較困難的文本並不保證有更多的標點符號
--  _準確率顯示和結果顯示_ 測試: 只有完全正確的文本才會被系統提交並顯示結果，錯誤的輸入不會顯示結果
-- 在測試中，幫我縮短等待時間
-
-幫我改善以上幾點問題，並給我完整的測試腳本
-
-完成所有測試
-```ts
 import { test, expect } from '@playwright/test';
 
 test.describe('打字練習網站測試', () => {
@@ -200,4 +164,3 @@ test.describe('打字練習網站測試', () => {
     await expect(keyA).toHaveClass(/active/);
   });
 });
-```
