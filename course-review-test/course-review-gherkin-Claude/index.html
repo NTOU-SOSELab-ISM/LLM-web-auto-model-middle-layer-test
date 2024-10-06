@@ -10,8 +10,10 @@
 <body>
     <header>
         <div class="logo">
-            <i class="fas fa-graduation-cap"></i>
-            <span>課程評價網</span>
+            <a href="index.html">
+                <i class="fas fa-graduation-cap"></i>
+                <span>課程評價網</span>
+            </a>
         </div>
         <nav>
             <a href="index.html" class="active">課程資訊查詢區</a>
@@ -19,44 +21,39 @@
         </nav>
     </header>
     <main>
-        <section class="search-section">
-            <div class="search-options">
-                <span>使用關鍵字查詢：</span>
-                <label>
-                    <input type="radio" name="searchType" value="courseName" checked> 依課名查詢
-                </label>
-                <label>
-                    <input type="radio" name="searchType" value="teacherName"> 依老師名字查詢
-                </label>
+        <section id="search-section">
+            <div class="search-container">
+                <span>使用關鍵字查詢</span>
+                <input type="text" id="search-input" placeholder="輸入關鍵字...">
+                <select id="search-type">
+                    <option value="course">依課名查詢</option>
+                    <option value="teacher">依老師名字查詢</option>
+                </select>
+                <button id="search-button">搜尋</button>
             </div>
-            <input type="text" id="searchInput" placeholder="輸入關鍵字...">
         </section>
-        <section class="content">
-            <div class="course-list">
-                <!-- 課程列表將由 JavaScript 動態生成 -->
-            </div>
-            <div class="course-details">
-                <button id="addReviewBtn">新增課程評論</button>
-                <div id="reviewsList">
-                    <!-- 評論列表將由 JavaScript 動態生成 -->
-                </div>
-                <div id="addReviewForm" style="display: none;">
-                    <input type="text" id="reviewerName" placeholder="輸入使用者名稱">
-                    <textarea id="reviewContent" placeholder="輸入評論"></textarea>
+        <section id="results-section">
+            <div id="course-list"></div>
+            <div id="course-details">
+                <button id="add-review-button">新增課程評論</button>
+                <div id="review-form" style="display: none;">
+                    <input type="text" id="user-name" placeholder="輸入使用者名稱">
+                    <textarea id="review-text" placeholder="輸入評論"></textarea>
                     <div class="rating">
-                        <label>課程涼度：</label>
+                        <label>涼度評分：</label>
                         <div class="stars" data-rating="coolness"></div>
                     </div>
                     <div class="rating">
-                        <label>給分甜度：</label>
+                        <label>給分甜度評分：</label>
                         <div class="stars" data-rating="grading"></div>
                     </div>
                     <div class="rating">
-                        <label>考試難度：</label>
+                        <label>考試難度評分：</label>
                         <div class="stars" data-rating="difficulty"></div>
                     </div>
-                    <button id="submitReviewBtn">提交評論</button>
+                    <button id="submit-review">提交評論</button>
                 </div>
+                <div id="reviews-list"></div>
             </div>
         </section>
     </main>

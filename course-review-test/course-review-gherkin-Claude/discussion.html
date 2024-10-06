@@ -19,18 +19,16 @@
         </nav>
     </header>
     <main>
-        <section class="chat-room">
-            <div id="chatMessages">
-                <!-- 聊天訊息將由 JavaScript 動態生成 -->
-            </div>
-            <div class="chat-input">
-                <input type="color" id="messageColor" value="#000000">
+        <section id="chat-room">
+            <div id="message-list"></div>
+            <div id="message-input">
+                <input type="color" id="color-picker" value="#000000">
                 <input type="text" id="nickname" placeholder="輸入暱稱">
-                <input type="text" id="messageInput" placeholder="輸入訊息...">
-                <button id="sendMessageBtn">發送</button>
+                <input type="text" id="message" placeholder="輸入訊息">
+                <button id="send-message">發送</button>
             </div>
         </section>
     </main>
-    <script src="discussion.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
