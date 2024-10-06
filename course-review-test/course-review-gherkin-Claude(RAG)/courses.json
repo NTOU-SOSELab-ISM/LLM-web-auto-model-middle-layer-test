@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "程式設計概論",
+    "teacher": "王小明",
+    "coolness": 4,
+    "sweetness": 3,
+    "difficulty": 2,
+    "commentCount": 2
+  },
+  {
+    "id": 2,
+    "name": "資料結構",
+    "teacher": "李大華",
+    "coolness": 3,
+    "sweetness": 4,
+    "difficulty": 4,
+    "commentCount": 1
+  },
+  {
+    "id": 3,
+    "name": "演算法",
+    "teacher": "張三",
+    "coolness": 2,
+    "sweetness": 2,
+    "difficulty": 5,
+    "commentCount": 1
+  },
+  {
+    "id": 4,
+    "name": "資料庫系統",
+    "teacher": "陳四",
+    "coolness": 4,
+    "sweetness": 3,
+    "difficulty": 3,
+    "commentCount": 1
+  },
+  {
+    "id": 5,
+    "name": "人工智慧",
+    "teacher": "林五",
+    "coolness": 5,
+    "sweetness": 4,
+    "difficulty": 4,
+    "commentCount": 1
+  }
+]

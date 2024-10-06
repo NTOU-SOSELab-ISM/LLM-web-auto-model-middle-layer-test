@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程評價網 - 討論區</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="icon">📚</span>
+            <h1>課程評價網</h1>
+        </div>
+        <nav>
+            <a href="index.html">課程資訊查詢區</a>
+            <a href="discussion.html" class="active">討論區</a>
+        </nav>
+    </header>
+    <main>
+        <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <!-- 聊天訊息將在這裡動態生成 -->
+            </div>
+            <div class="chat-input">
+                <input type="color" id="message-color" value="#000000">
+                <input type="text" id="nickname" placeholder="暱稱">
+                <input type="text" id="message-input" placeholder="輸入訊息...">
+                <button id="send-message">發送</button>
+            </div>
+        </div>
+    </main>
+    <script src="discussion.js"></script>
+</body>
+</html>

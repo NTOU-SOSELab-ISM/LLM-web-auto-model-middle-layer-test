@@ -1,0 +1,50 @@
+[
+    {
+      "courseId": 1,
+      "username": "學生A",
+      "content": "這門課很有趣，老師講解清楚。",
+      "coolness": 4,
+      "sweetness": 3,
+      "difficulty": 2
+    },
+    {
+      "courseId": 1,
+      "username": "學生B",
+      "content": "作業有點多，但很有收穫。",
+      "coolness": 3,
+      "sweetness": 4,
+      "difficulty": 3
+    },
+    {
+      "courseId": 2,
+      "username": "學生C",
+      "content": "課程內容豐富，但考試有點難。",
+      "coolness": 3,
+      "sweetness": 4,
+      "difficulty": 4
+    },
+    {
+      "courseId": 3,
+      "username": "學生D",
+      "content": "這門課真的很難，需要花很多時間理解。",
+      "coolness": 2,
+      "sweetness": 2,
+      "difficulty": 5
+    },
+    {
+      "courseId": 4,
+      "username": "學生E",
+      "content": "老師很幽默，上課氛圍輕鬆。",
+      "coolness": 4,
+      "sweetness": 3,
+      "difficulty": 3
+    },
+    {
+      "courseId": 5,
+      "username": "學生F",
+      "content": "非常有趣的課程，讓我對AI產生了濃厚的興趣。",
+      "coolness": 5,
+      "sweetness": 4,
+      "difficulty": 4
+    }
+  ]
