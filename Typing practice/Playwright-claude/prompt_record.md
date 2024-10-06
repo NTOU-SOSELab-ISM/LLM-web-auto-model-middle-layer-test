@@ -92,3 +92,48 @@ test.describe('Typing Practice Website', () => {
   });
 });
 ```
+
+```mermaid
+graph TD
+    A[Start] --> B[Before Each: Navigate to Website]
+    B --> C{Run Tests}
+    C --> D[Background Toggle]
+    C --> E[Difficulty and Length Selector]
+    C --> F[Typing Functionality]
+    C --> G[Virtual Keyboard]
+    C --> H[Results Display]
+
+    D --> D1[Check Initial Background]
+    D1 --> D2[Toggle Background]
+    D2 --> D3[Check Dark Mode]
+    D3 --> D4[Toggle Background Again]
+    D4 --> D5[Check Light Mode]
+
+    E --> E1[Select Medium Difficulty]
+    E1 --> E2[Select Long Length]
+    E2 --> E3[Get Initial Text]
+    E3 --> E4[Select Easy Difficulty]
+    E4 --> E5[Select Short Length]
+    E5 --> E6[Get New Text]
+    E6 --> E7[Compare Texts]
+
+    F --> F1[Get Text from Display]
+    F1 --> F2[Type First 10 Characters]
+    F2 --> F3[Check Timer]
+    F3 --> F4[Check WPM]
+    F4 --> F5[Check Accuracy]
+
+    G --> G1[Type 'a' in Input Box]
+    G1 --> G2[Check 'a' Key Highlight]
+
+    H --> H1[Get Full Text]
+    H1 --> H2[Type Full Text]
+    H2 --> H3[Check Results Visibility]
+    H3 --> H4[Check Results Content]
+
+    D5 --> I[End]
+    E7 --> I
+    F5 --> I
+    G2 --> I
+    H4 --> I
+```
