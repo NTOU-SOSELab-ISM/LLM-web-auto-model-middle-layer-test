@@ -10,35 +10,35 @@
     <div id="app">
         <header>
             <h1>打字練習網站</h1>
-            <button id="themeToggle">切換主題</button>
+            <button id="themeToggle" aria-label="切換主題" data-testid="theme-toggle">切換主題</button>
         </header>
         <div id="stats">
-            <div id="timer">已用時間: <span id="timeElapsed">0</span>秒</div>
-            <div id="wpm">WPM: <span id="wpmValue">0</span></div>
-            <div id="accuracy">準確率: <span id="accuracyValue">100</span>%</div>
+            <div id="timer" aria-label="已用時間" data-testid="timer">已用時間: <span id="timeElapsed">0</span>秒</div>
+            <div id="wpm" aria-label="每分鐘字數" data-testid="wpm">WPM: <span id="wpmValue">0</span></div>
+            <div id="accuracy" aria-label="準確率" data-testid="accuracy">準確率: <span id="accuracyValue">0/0</span></div>
         </div>
         <div id="difficultySelector">
             <label for="difficulty">難度:</label>
-            <select id="difficulty">
+            <select id="difficulty" aria-label="選擇難度" data-testid="difficulty-selector">
                 <option value="easy">簡單</option>
                 <option value="medium">中等</option>
                 <option value="hard">困難</option>
             </select>
         </div>
-        <div id="textDisplay"></div>
+        <div id="textDisplay" aria-label="待輸入文本" data-testid="text-display"></div>
         <div id="inputArea">
-            <textarea id="userInput" rows="3" placeholder="開始打字..."></textarea>
+            <textarea id="userInput" rows="3" placeholder="開始打字..." aria-label="用戶輸入區" data-testid="user-input"></textarea>
         </div>
-        <div id="keyboard"></div>
-        <button id="addCustomText">添加自定義文本</button>
-        <button id="toggleSound">聲音: 開</button>
+        <div id="keyboard" aria-label="虛擬鍵盤" data-testid="virtual-keyboard"></div>
+        <button id="addCustomText" aria-label="添加自定義文本" data-testid="add-custom-text">添加自定義文本</button>
+        <button id="toggleSound" aria-label="切換聲音" data-testid="toggle-sound">聲音: 開</button>
     </div>
-    <div id="customTextModal" class="modal">
+    <div id="customTextModal" class="modal" aria-label="自定義文本模態框" data-testid="custom-text-modal">
         <div class="modal-content">
             <h2>添加自定義文本</h2>
-            <textarea id="customText" rows="5" placeholder="輸入自定義文本..."></textarea>
-            <button id="submitCustomText">完成</button>
-            <button id="cancelCustomText">取消</button>
+            <textarea id="customText" rows="5" placeholder="輸入自定義文本..." aria-label="自定義文本輸入" data-testid="custom-text-input"></textarea>
+            <button id="submitCustomText" aria-label="提交自定義文本" data-testid="submit-custom-text">完成</button>
+            <button id="cancelCustomText" aria-label="取消自定義文本" data-testid="cancel-custom-text">取消</button>
         </div>
     </div>
     <audio id="keySound" src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV"></audio>
