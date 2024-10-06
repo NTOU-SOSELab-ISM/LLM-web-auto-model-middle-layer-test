@@ -1,5 +1,5 @@
-### 以下是兩個網頁範例
-範例1:
+## 以下是兩個網頁範例
+### 範例1:
 
 以下為HTML
 ```html
@@ -210,7 +210,7 @@ textarea:focus {
 }
 ```
 
-範例2:
+### 範例2:
 ```html
 <!DOCTYPE html>
 <html lang="en">
