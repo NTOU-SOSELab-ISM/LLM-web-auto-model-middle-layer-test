@@ -49,7 +49,7 @@
 <body>
   <div class="container" aria-label="Typing Practice Container" data-testid="typing-practice-container">
     <h1 aria-label="Typing Practice Title" data-testid="typing-practice-title">Typing Practice</h1>
-    <div id="timer" aria-label="Timer" data-testid="timer">Time left: 60s</div>
+    <div id="timer" aria-label="Timer" data-testid="timer">Time left: 5s</div>
     <div id="textToType" aria-label="Text to Type" data-testid="text-to-type">The quick brown fox jumps over the lazy dog.</div>
     <textarea id="inputText" aria-label="Input Text Area" data-testid="input-text-area" placeholder="Start typing..." autofocus></textarea>
     <div id="result" aria-label="Result" data-testid="result"></div>
@@ -60,7 +60,7 @@
     let inputText = document.getElementById('inputText');
     let textToType = document.getElementById('textToType').innerText;
     let resultElement = document.getElementById('result');
-    let timeLeft = 60;
+    let timeLeft = 5;
     
     // Start countdown timer
     let countdown = setInterval(function () {
