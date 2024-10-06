@@ -1,5 +1,6 @@
-這是兩個playwrtight範例
-第一個
+### 以下是兩個playwrtight範例，分別對應到兩個網頁範例
+範例1:
+```ts
 import { test, expect } from '@playwright/test';
 
 test.describe('Typing Challenge', () => {
@@ -112,8 +113,10 @@ test.describe('Typing Challenge', () => {
   });
 
 });
+```
 
-第二個
+範例2:
+```ts
 import { test, expect } from '@playwright/test';
 
 test('Initial display of timer and text to type', async ({ page }) => {
@@ -176,4 +179,5 @@ test('Typing partial text and checking correct marking', async ({ page }) => {
     await expect(result).toHaveText('恭喜！你完成了！'); // 顯示完成訊息
     await expect(inputTextArea).toBeDisabled(); // 確認輸入框禁用
   });
+```
   

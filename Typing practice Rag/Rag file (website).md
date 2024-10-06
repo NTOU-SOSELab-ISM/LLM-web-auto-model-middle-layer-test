@@ -1,5 +1,8 @@
-以下是兩個範例
-範例1
+### 以下是兩個網頁範例
+範例1:
+
+以下為HTML
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +30,9 @@
     <script src="script.js"></script>
 </body>
 </html>
+```
+以下為Javascript
+```js
 const generatedWordElement = document.getElementById('generatedWord');
 const inputTextElement = document.getElementById('inputText');
 const feedbackElement = document.getElementById('feedback');
@@ -119,6 +125,9 @@ function calculateWPM() {
     const wpm = timeSpent > 0 ? (wordCount / timeSpent) * 60 : 0;
     wpmElement.textContent = Math.max(0, Math.round(wpm));
 }
+```
+以下為CSS
+```css
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -199,8 +208,10 @@ textarea:focus {
 .incorrect {
     color: red;
 }
+```
 
-範例2
+範例2:
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -309,3 +320,4 @@ textarea:focus {
   </script>
 </body>
 </html>
+```
