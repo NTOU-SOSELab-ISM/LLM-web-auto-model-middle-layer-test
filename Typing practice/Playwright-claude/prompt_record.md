@@ -1,7 +1,7 @@
 # Generate Playwright E2E test by Claude 3.5 Sonnet
 
 ## Prompt 1
-這是一個打字練習網頁（**index.html style.css script.js**）與網頁需求書(**website_requirement.md**)，我想要使用**Playwright**進行端對端測試，幫我使用Typescirpt生成測試腳本，並給我完整的程式碼。在html tag中含有**aria-label**與**data-testid**屬性，請盡量用**getByTestId**進行選擇，並註明現在的測試對象為何。
+這是一個打字練習網頁（**index.html style.css script.js**）與網頁需求書(**website_requirement.md**)，我想要使用**Playwright**進行端對端測試，幫我使用Typescirpt生成測試腳本，並給我完整的程式碼。在html tag中含有**aria-label**與**data-testid**屬性，請盡量用**page.getByTestId()** 進行選擇，並註明現在的測試對象為何。
 
 ## Prompt 2
 在 _Difficulty and length selector functionality_ 測試中，**difficultySelector**和**lengthSelector**的定位有問題，幫我用 **page.getByTestId()** 來進行定位，並給我完整的程式碼。
