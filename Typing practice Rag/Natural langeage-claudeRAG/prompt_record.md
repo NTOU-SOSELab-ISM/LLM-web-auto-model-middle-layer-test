@@ -1,4 +1,4 @@
-# Use gherkin to generate website by Claude
+# Use natural language to generate website by GPT-4o
 
 ## Prompt 1
 
@@ -35,5 +35,59 @@
   - 界面友好，操作簡便。
   - 所有互動均需有明確的視覺反饋。
 
-生成Gherkin的架構
+幫我依照以上需求生成網頁，並給我完整程式碼。 + RAG file
+```
+
+## Prompt 2
+虛擬鍵盤的排版壞了
+在深色模式下輸入欄也要是深色的
+目前錯誤字為紅色 但正確字不是綠色
+缺少隨機生成文本的按鈕
+
+## Prompt 3
+調整虛擬鍵盤的排版 空白鍵太大了
+更改整體排版 讓介面更加簡單易懂
+
+## Prompt 4
+虛擬鍵盤的排版完全壞了
+讓虛擬鍵盤的格式跟真實鍵盤一樣
+
+## Conclusion
+表現比chatgpt好
+會錯一些排版
+但在前面就完成大部分功能
+
+## mermaid
+```mermaid
+graph TD
+    A[打字練習網站] --> B[頁面結構]
+    A --> C[功能模塊]
+    A --> D[樣式]
+
+    B --> B1[Header]
+    B --> B2[Main Content]
+    B --> B3[Modal]
+
+    B1 --> B1a[標題]
+    B1 --> B1b[控制按鈕]
+
+    B2 --> B2a[統計信息]
+    B2 --> B2b[文本顯示區]
+    B2 --> B2c[輸入區]
+    B2 --> B2d[虛擬鍵盤]
+
+    B3 --> B3a[自定義文本輸入]
+    B3 --> B3b[確認/取消按鈕]
+
+    C --> C1[主題切換]
+    C --> C2[計時器]
+    C --> C3[WPM計算]
+    C --> C4[文本生成]
+    C --> C5[輸入處理]
+    C --> C6[鍵盤互動]
+
+    D --> D1[淺色主題]
+    D --> D2[深色主題]
+    D --> D3[響應式佈局]
+    D --> D4[鍵盤樣式]
 ```
