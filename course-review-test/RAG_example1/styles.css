@@ -4,7 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-color: rgb(204, 230, 255);
+}
 /* Header */
 header {
     background-color: #003366;
