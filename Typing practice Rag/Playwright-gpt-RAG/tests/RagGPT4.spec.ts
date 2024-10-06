@@ -1,32 +1,3 @@
-# Use RAG to generate Playwright E2E test by gpt-4o
-
-## Prompt 1
-
-- 這是一個打字練習網頁（**index.html style.css script.js**）與網頁需求書(**website_requirement.md**)，我想要使用**Playwright**進行端對端測試。
-- 我提供了兩個使用**Playwright**進行端對端測試的腳本範例(**Rag file(playwright).md**)。
-- 幫我學習範例中的腳本，使用Typescirpt生成測試腳本，並給我完整的程式碼。在html tag中含有**aria-label**與**data-testid**屬性，請盡量用**page.getByTestId()** 進行選擇，並註明現在的測試對象為何。
-
-
-## Prompt 2
-
-以下有幾點問題需要修改:
-- WPM可能為0
-- 只有完全正確 測試才會完成
-幫我改善以上幾點問題，並給我完整的測試腳本
-
-
-## Prompt 3
-
-每次的文本是隨機產生
-你必須針對每次的文字去調整你的測試內容
-
-## Prompt 4
-
-輸入的文字請一個一個輸入
-
-## 完成
-
-```
 import { test, expect } from '@playwright/test';
 
 test.describe('Typing Practice Website with dynamic text and per-character typing', () => {
@@ -132,5 +103,3 @@ test.describe('Typing Practice Website with dynamic text and per-character typin
   });
 
 });
-
-```
