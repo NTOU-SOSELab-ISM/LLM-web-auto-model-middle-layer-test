@@ -8,6 +8,6 @@
     "http-server": "^14.1.1"
   },
   "scripts": {
-    "start": "http-server ./RagExample2 -p 8080"
+    "start": "http-server ./Playwright-gpt-RAG -p 8080"
   }
 }
