@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,33 +9,31 @@
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <span><a href="index.html">課程評價網</a></span>
+            <a href="index.html">
+                <span class="icon">&#9733;</span>
+                <span class="logo-text">課程評價網</span>
+            </a>
         </div>
         <nav>
-            <a href="index.html">課程資訊查詢區</a>
-            <a href="discussion.html" class="active">討論區</a>
+            <ul>
+                <li><a href="index.html">課程資訊查詢區</a></li>
+                <li><a href="discussion.html" class="active">討論區</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <div class="chat-section">
-            <div id="chatHistory">
-                <!-- 討論區歷史訊息將由 JavaScript 動態生成 -->
+        <section id="discussion-area">
+            <div id="message-list"></div>
+            <div id="message-input">
+                <input type="color" id="color-picker">
+                <input type="text" id="username" placeholder="輸入暱稱">
+                <input type="text" id="message" placeholder="輸入訊息">
+                <button id="send-btn">發送</button>
             </div>
-            <div class="chat-input">
-                <select id="messageColor">
-                    <option value="red">紅色</option>
-                    <option value="green">綠色</option>
-                    <option value="blue">藍色</option>
-                </select>
-                <input type="text" id="nickname" placeholder="輸入暱稱">
-                <input type="text" id="messageInput" placeholder="輸入訊息">
-                <button onclick="sendMessage()">發送</button>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <script src="chat.js"></script>
+    <script src="discussion.js"></script>
 </body>
 </html>
