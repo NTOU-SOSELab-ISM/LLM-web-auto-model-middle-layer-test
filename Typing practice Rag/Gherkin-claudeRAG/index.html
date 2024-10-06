@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Practice Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="timer">Time: 60s</div>
+        <div id="wpm">WPM: 0</div>
+        <div id="text-display"></div>
+        <textarea id="input-area" placeholder="Start typing here..." autofocus></textarea>
+    </div>
+    <div id="virtual-keyboard"></div>
+    <button id="toggle-bg">Toggle Dark Mode</button>
+    <button id="custom-text">Custom Text</button>
+    <button id="generate-text">Generate New Text</button>
+    <div id="custom-modal" class="modal">
+        <div class="modal-content">
+            <textarea id="custom-input" placeholder="Enter your custom text here..."></textarea>
+            <div class="modal-buttons">
+                <button id="cancel-custom">Cancel</button>
+                <button id="complete-custom">Complete</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
