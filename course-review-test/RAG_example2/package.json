@@ -1,0 +1,20 @@
+{
+  "name": "rag_example2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "http-server ./ -p 8080"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.7.4"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http-server": "^14.1.1"
+  }
+}
