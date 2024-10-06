@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="toggleTheme">Toggle Background</button>
+            <p>Time left: <span id="timer">60</span>s</p>
+            <p>WPM: <span id="wpm">0</span></p>
+        </div>
+        <div class="content">
+            <p id="textToType">Click "Generate Text" to start typing practice.</p>
+            <textarea id="inputText" placeholder="Start typing..." autofocus></textarea>
+            <div id="feedback"></div>
+            <div class="keyboard" id="virtualKeyboard"></div>
+        </div>
+        <div class="actions">
+            <button id="generateText">Generate Text</button>
+            <button id="addText">Add Custom Text</button>
+        </div>
+    </div>
+
+    <div id="customTextModal" class="modal">
+        <div class="modal-content">
+            <textarea id="customTextInput" placeholder="Enter custom text..."></textarea>
+            <button id="submitCustomText">Submit</button>
+            <button id="cancelCustomText">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
