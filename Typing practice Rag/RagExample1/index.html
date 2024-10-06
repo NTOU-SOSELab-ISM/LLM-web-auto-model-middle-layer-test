@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" aria-label="Typing Challenge Container" data-testid="typing-challenge-container">
+        <h1 aria-label="Typing Challenge Title" data-testid="typing-challenge-title">Typing Challenge</h1>
+        <div class="typing-area" aria-label="Typing Area" data-testid="typing-area">
+            <p id="generatedWord" aria-label="Generated Word" data-testid="generated-word"></p>
+            <textarea id="inputText" aria-label="Input Text Area" data-testid="input-text-area" placeholder="Type the word here..."></textarea>
+        </div>
+        <div id="feedback" aria-label="Feedback" data-testid="feedback"></div>
+        <div id="result" aria-label="Result" data-testid="result"></div>
+        <div class="stats" aria-label="Statistics" data-testid="stats">
+            <p>Time: <span id="timer" aria-label="Timer" data-testid="timer">60</span> seconds</p>
+            <p>Words per minute: <span id="wpm" aria-label="Words Per Minute" data-testid="wpm">0</span></p>
+            <p>Errors: <span id="errors" aria-label="Errors" data-testid="errors">0</span></p>
+            <p>Attempts: <span id="attempts" aria-label="Attempts" data-testid="attempts">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

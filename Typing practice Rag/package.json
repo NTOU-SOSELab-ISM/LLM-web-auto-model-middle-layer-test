@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "playwright": "^1.47.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.7.4",
+    "http-server": "^14.1.1"
+  },
+  "scripts": {
+    "start": "http-server ./RagExample2 -p 8080"
+  }
+}

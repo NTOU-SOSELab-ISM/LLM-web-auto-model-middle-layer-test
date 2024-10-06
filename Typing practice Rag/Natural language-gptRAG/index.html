@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打字練習網站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 切換背景按鈕，置於右上角 -->
+    <button id="toggle-theme" class="theme-btn">切換暗色模式</button>
+
+    <div class="container">
+        <h1>打字練習網站</h1>
+
+        <!-- 統計區域，移到上方 -->
+        <div class="stats">
+            <p>完成時間: <span id="completionTime">0</span> 秒</p>
+            <p>每分鐘字數: <span id="wpm">0</span></p>
+            <p>錯誤次數: <span id="errors">0</span></p>
+        </div>
+
+        <!-- 恭喜完成提示，移到頁面上方 -->
+        <div id="completionMessage" class="completion-message">恭喜！你完成了！</div>
+
+        <!-- 隨機產生文本按鈕 -->
+        <button id="generateTextBtn" class="btn">隨機產生文本</button>
+
+        <!-- 倒數計時器 -->
+        <div class="timer">剩餘時間: <span id="countdown">60</span> 秒</div>
+
+        <!-- 文本顯示與輸入區域 -->
+        <div id="text-area">
+            <div id="generatedText" class="generated-text"></div>
+            <textarea id="inputText" placeholder="請輸入文字..."></textarea>
+        </div>
+
+        <!-- 添加文本按鈕 -->
+        <button id="addTextBtn" class="btn">添加文本</button>
+
+        <!-- 虛擬鍵盤 -->
+        <div id="virtualKeyboard" class="keyboard">
+            <!-- 鍵盤會由 JavaScript 動態生成 -->
+        </div>
+
+    </div>
+
+    <!-- 添加文本的對話框 -->
+    <div id="addTextModal" class="modal">
+        <div class="modal-content">
+            <textarea id="newTextInput" placeholder="輸入您想添加的文本..."></textarea>
+            <button id="confirmAddText" class="btn">確定</button>
+            <button id="cancelAddText" class="btn">取消</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
