@@ -1,28 +1,4 @@
-
-幫我對以下使用者需求做為prompts讓llm產生的的網頁程式碼撰寫Playwright的typescript E2E測試程式碼，預設Endpoint為`http://localhost:8080`:
-使用者需求:
-`user_prompts.md`
-index.html:
-`index.html`
-discussion.html:
-`discussion.html`
-script.js:
-`script.js`
-discussion.js:
-`discussion.js`
-style.css:
-`style.css`
-comments.json:
-`comments.json`
-courses.json:
-`courses.json`
-initial_message.json:
-`initial_message.json`
-
-以下是兩份同類型的專案，有使用者需求、程式碼、E2E testing，可以參考以下做為相關依據
-
-以下是有關於使用html, css, javascript撰寫的兩個有複雜UI/UX的網頁程式碼專案，其中每個專案會有使用者的需求和對應需求所產生的完整程式碼檔案，以下是內文:
-
+以下是兩份參考用的網頁專案，有使用者需求、程式碼、playwright testing
 # 範例專案1: 旅遊景點評論網站
 
 ## User prompts
@@ -2815,3 +2791,688 @@ test.describe('美食餐廳評價網 E2E 測試', () => {
 
 });
 ```
+
+
+幫我對以下使用者需求做為prompts讓llm產生的的網頁程式碼撰寫Playwright的typescript E2E測試程式碼，預設Endpoint為http://localhost:8080:
+ 
+使用者需求: 
+
+我要使用html、css、javascript做一個網頁，是一個課程評論網站，以下是詳細需求：  要有兩個頁面的html檔案，分別為「課程資訊查詢區」、「討論區」，並且生出相對應的處理樣式、處理按鍵或排版的互動  「課程資訊查詢區的要求1」：上方header為深灰底，有兩個選項，「課程資訊查詢區」、「討論區」可以點擊，點擊之後便會執行頁面跳轉，這兩個選項需要放在header右邊，左邊則是一個icon圖案＋「課程評價網」的字樣  「課程資訊查詢區的要求2」：header下方為頁面淺灰底，在上方有輸入框，可以輸入關鍵字，輸入框右上方可以選擇「依課名查詢」或是「依老師名字查詢」，搜尋列左上方顯示「使用關鍵字查詢的字樣」，這些篩選的部分要用javascripts處理  「課程資訊查詢區的要求3」：頁面淺灰底輸入框下方分成左右兩部分，左邊顯示根據關鍵字所篩選出來的課程資訊，每個課程資訊會被當成card物件，並顯示出課程名稱、老師姓名、評分、討論熱度，這個card物件左上角要顯示課程名稱，右上角要顯示老師姓名，左下角顯示課程評分，評分會有三列，每列分別代表 "課程涼度"、"給分甜度"、"考試難度"，每列文字後會是五個星星圖案的icon，會顯示每個評論該項目的平均分數，並且四捨五入到該新星星數，例如若課程涼度平均為2.4顆星，那就會顯示2顆星，右下角放討論熱數量並以數字和討論度icon顯示。  「課程資訊查詢區的要求4」：點擊左邊的card物件，左邊的card物件會多一個深灰色外框，代表標示為現在要查看該課程的評論資訊，點擊後右半邊最上方會顯示新增課程評論按鈕，點擊之後會顯示新增課程評論模式，等等再說明。新增課程按鈕下方會顯示該課程中，其它使用者對該課程的評論，對於一個使用者他的評論也是以card物件呈現，card物件中，左上方顯示使用者名稱，中間顯示該使用者對這堂課的評論，下方顯示該使用者對這堂課的評價，分三種評價：「課程涼度」、「給分甜度」、「考試難度」，每種評價會各占一列，和做左半邊的課程總攬的評分區域相同，每列用五顆星星表示他的評價如何，做。對於每一個card的樣式，我希望他都是白底來顯示的，並且設定radius讓邊緣圓角化，白底上顯示該課程或是使用者評論的所有資訊，並且左右兩邊都是可以上下滾動的。 剛剛的新增課程評論按鈕按下之後，新增課程評論按鈕會變為顯示課程按鈕，顯示課程按鈕按下會回到剛才的模式，在新增課程評論模式下，下方會只有五個輸入框：「輸入使用者名稱」、「輸入評論」、「輸入課程涼度評分」、「輸入給分甜度評分」、「輸入作業難度評分」，對於評分部分，有五個星星可以選，選從左數來第i個星星，最左邊到第i個星星會被填滿，代表評分為i分，最小1分最大5分，這些方框底下有「提交按鈕」，會提交至該堂課程的評論中，並切換到顯示課程模式，右邊的顯示評論方框其中之一會有剛剛所新增的評論，且最新評論會在最上方   「討論區的要求1」：深灰底設計的header跟課程資訊查詢區的要求一樣，只是在header區域切換到哪一頁該頁的文字就要變亮，其餘變暗  「討論區的要求2」：淺灰底中有一個討論區大框，可以當作一個聊天室，大家可以在上面留言，聊天室下方輸入區有顏色和暱稱和訊息可以選擇和輸入，從左而右是顏色、暱稱、訊息，對於每一則訊息，需要去紀錄發送時間、使用者暱稱、暱稱的顏色、使用者發送的訊息，按下發送按鍵或Enter就可以發送，並且把歷史訊息顯示在聊天室中  對於「課程資訊查詢區的要求4」，需要生出一開始最基礎的card的資訊，視為展示用的fake data，至少六個左半部的card，對於每一個左半部的card，要有五個以上使用者的評論，內容都是要生成的fake data，所有的fake data都用json存起來，並且把json直接當作data base使用，之後使用者進行新增的操作都會更新此份json  對於「討論區的要求2」，最一開始要生成一些初始的歷史討論訊息，至少3個不同使用者和10則訊息，一樣把這些訊息用json存起來，以後輸入的訊息都是存在這裡。  對於UI部分除了上述的顏色和radius要求，其餘幫我用美觀即可，最後給我符合所有需求的程式碼和fake data的json檔   
+index.html:
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程評價網 - 課程資訊查詢區</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="icon">📚</span>
+            <h1>課程評價網</h1>
+        </div>
+        <nav>
+            <a href="index.html" class="active">課程資訊查詢區</a>
+            <a href="discussion.html">討論區</a>
+        </nav>
+    </header>
+    <main>
+        <div class="search-area">
+            <input type="text" id="search-input" placeholder="輸入關鍵字...">
+            <div class="search-options">
+                <label><input type="radio" name="search-type" value="course" checked> 依課名查詢</label>
+                <label><input type="radio" name="search-type" value="teacher"> 依老師名字查詢</label>
+            </div>
+            <button id="search-button">搜索</button>
+        </div>
+        <div class="content">
+            <div class="course-list" id="course-list">
+                <!-- 課程卡片將在這裡動態生成 -->
+            </div>
+            <div class="course-details" id="course-details">
+                <h2>課程評論</h2>
+                <button id="add-comment-button">新增課程評論</button>
+                <div id="comment-form" style="display: none;">
+                    <input type="text" id="username" placeholder="使用者名稱">
+                    <textarea id="comment-content" placeholder="評論內容"></textarea>
+                    <div class="rating">
+                        <label>課程涼度：</label>
+                        <div class="stars" data-rating="course-coolness"></div>
+                    </div>
+                    <div class="rating">
+                        <label>給分甜度：</label>
+                        <div class="stars" data-rating="grading-sweetness"></div>
+                    </div>
+                    <div class="rating">
+                        <label>考試難度：</label>
+                        <div class="stars" data-rating="exam-difficulty"></div>
+                    </div>
+                    <button id="submit-comment">提交評論</button>
+                </div>
+                <div id="comments-list">
+                    <!-- 評論將在這裡動態生成 -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+discussion.html:
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>課程評價網 - 討論區</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="icon">📚</span>
+            <h1>課程評價網</h1>
+        </div>
+        <nav>
+            <a href="index.html">課程資訊查詢區</a>
+            <a href="discussion.html" class="active">討論區</a>
+        </nav>
+    </header>
+    <main>
+        <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <!-- 聊天訊息將在這裡動態生成 -->
+            </div>
+            <div class="chat-input">
+                <input type="color" id="message-color" value="#000000">
+                <input type="text" id="nickname" placeholder="暱稱">
+                <input type="text" id="message-input" placeholder="輸入訊息...">
+                <button id="send-message">發送</button>
+            </div>
+        </div>
+    </main>
+    <script src="discussion.js"></script>
+</body>
+</html>
+
+discussion.js:
+let messages = [];
+
+// 從 localStorage 加載消息
+function loadMessages() {
+    const storedMessages = localStorage.getItem('chatMessages');
+    if (storedMessages) {
+        messages = JSON.parse(storedMessages);
+        displayMessages();
+    } else {
+        // 如果沒有存儲的消息，加載初始消息
+        fetch('initial_messages.json')
+            .then(response => response.json())
+            .then(data => {
+                messages = data;
+                displayMessages();
+                saveMessages();
+            });
+    }
+}
+
+// 顯示消息
+function displayMessages() {
+    const chatMessages = document.getElementById('chat-messages');
+    chatMessages.innerHTML = '';
+    messages.forEach(message => {
+        const messageElement = document.createElement('div');
+        messageElement.className = 'message';
+        messageElement.innerHTML = 
+            <span style="color: ${message.color}">${message.nickname}</span>
+            <span>${message.time}</span>: ${message.content}
+        ;
+        chatMessages.appendChild(messageElement);
+    });
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// 保存消息到 localStorage
+function saveMessages() {
+    localStorage.setItem('chatMessages', JSON.stringify(messages));
+}
+
+// 發送消息
+function sendMessage() {
+    const nickname = document.getElementById('nickname').value;
+    const content = document.getElementById('message-input').value;
+    const color = document.getElementById('message-color').value;
+
+    if (nickname && content) {
+        const newMessage = {
+            nickname,
+            content,
+            color,
+            time: new Date().toLocaleTimeString()
+        };
+
+        messages.push(newMessage);
+        displayMessages();
+        saveMessages();
+
+        document.getElementById('message-input').value = '';
+    } else {
+        alert('請輸入暱稱和訊息內容！');
+    }
+}
+
+// 事件監聽器
+document.addEventListener('DOMContentLoaded', () => {
+    loadMessages();
+    document.getElementById('send-message').addEventListener('click', sendMessage);
+    document.getElementById('message-input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+});
+
+coments.json:
+[
+    {
+      "courseId": 1,
+      "username": "學生A",
+      "content": "這門課很有趣，老師講解清楚。",
+      "coolness": 4,
+      "sweetness": 3,
+      "difficulty": 2
+    },
+    {
+      "courseId": 1,
+      "username": "學生B",
+      "content": "作業有點多，但很有收穫。",
+      "coolness": 3,
+      "sweetness": 4,
+      "difficulty": 3
+    },
+    {
+      "courseId": 2,
+      "username": "學生C",
+      "content": "課程內容豐富，但考試有點難。",
+      "coolness": 3,
+      "sweetness": 4,
+      "difficulty": 4
+    },
+    {
+      "courseId": 3,
+      "username": "學生D",
+      "content": "這門課真的很難，需要花很多時間理解。",
+      "coolness": 2,
+      "sweetness": 2,
+      "difficulty": 5
+    },
+    {
+      "courseId": 4,
+      "username": "學生E",
+      "content": "老師很幽默，上課氛圍輕鬆。",
+      "coolness": 4,
+      "sweetness": 3,
+      "difficulty": 3
+    },
+    {
+      "courseId": 5,
+      "username": "學生F",
+      "content": "非常有趣的課程，讓我對AI產生了濃厚的興趣。",
+      "coolness": 5,
+      "sweetness": 4,
+      "difficulty": 4
+    }
+  ]
+
+courses.json:
+[
+  {
+    "id": 1,
+    "name": "程式設計概論",
+    "teacher": "王小明",
+    "coolness": 4,
+    "sweetness": 3,
+    "difficulty": 2,
+    "commentCount": 2
+  },
+  {
+    "id": 2,
+    "name": "資料結構",
+    "teacher": "李大華",
+    "coolness": 3,
+    "sweetness": 4,
+    "difficulty": 4,
+    "commentCount": 1
+  },
+  {
+    "id": 3,
+    "name": "演算法",
+    "teacher": "張三",
+    "coolness": 2,
+    "sweetness": 2,
+    "difficulty": 5,
+    "commentCount": 1
+  },
+  {
+    "id": 4,
+    "name": "資料庫系統",
+    "teacher": "陳四",
+    "coolness": 4,
+    "sweetness": 3,
+    "difficulty": 3,
+    "commentCount": 1
+  },
+  {
+    "id": 5,
+    "name": "人工智慧",
+    "teacher": "林五",
+    "coolness": 5,
+    "sweetness": 4,
+    "difficulty": 4,
+    "commentCount": 1
+  }
+]
+
+initial_messages.json:
+[
+    {
+      "nickname": "使用者A",
+      "content": "大家好！這個討論區真不錯。",
+      "color": "#FF0000",
+      "time": "14:00:00"
+    },
+    {
+      "nickname": "使用者B",
+      "content": "我同意，很方便交流課程資訊。",
+      "color": "#00FF00",
+      "time": "14:05:00"
+    },
+    {
+      "nickname": "使用者C",
+      "content": "有人修過程式設計概論嗎？想聽聽大家的評價。",
+      "color": "#0000FF",
+      "time": "14:10:00"
+    },
+    {
+      "nickname": "使用者A",
+      "content": "我修過，老師講解很清楚，推薦！",
+      "color": "#FF0000",
+      "time": "14:15:00"
+    },
+    {
+      "nickname": "使用者D",
+      "content": "資料結構這門課難度如何？",
+      "color": "#FF00FF",
+      "time": "14:20:00"
+    },
+    {
+      "nickname": "使用者B",
+      "content": "有一定難度，但很重要，建議認真學習。",
+      "color": "#00FF00",
+      "time": "14:25:00"
+    },
+    {
+      "nickname": "使用者E",
+      "content": "有人對人工智慧這門課有了解嗎？",
+      "color": "#00FFFF",
+      "time": "14:30:00"
+    },
+    {
+      "nickname": "使用者C",
+      "content": "聽說很有趣，但需要較多數學基礎。",
+      "color": "#0000FF",
+      "time": "14:35:00"
+    },
+    {
+      "nickname": "使用者F",
+      "content": "我正在修這門課，確實很有挑戰性，但很有收穫。",
+      "color": "#FFFF00",
+      "time": "14:40:00"
+    },
+    {
+      "nickname": "使用者A",
+      "content": "謝謝大家的分享，對選課很有幫助！",
+      "color": "#FF0000",
+      "time": "14:45:00"
+    }
+  ]
+  script.js:
+
+  let courses = [];
+let comments = [];
+let selectedCourseId = null;
+
+// 從 JSON 文件加載數據
+async function loadData() {
+    const coursesResponse = await fetch('courses.json');
+    courses = await coursesResponse.json();
+
+    const commentsResponse = await fetch('comments.json');
+    comments = await commentsResponse.json();
+
+    displayCourses(courses);
+}
+
+// 顯示課程列表
+function displayCourses(coursesToShow) {
+    const courseList = document.getElementById('course-list');
+    courseList.innerHTML = '';
+
+    coursesToShow.forEach(course => {
+        const card = document.createElement('div');
+        card.className = 'course-card';
+        card.dataset.id = course.id;
+        card.innerHTML = `
+            <h3>${course.name}</h3>
+            <p>教師：${course.teacher}</p>
+            <div class="ratings">
+                <p>課程涼度：<span class="stars">${getStars(course.coolness)}</span></p>
+                <p>給分甜度：<span class="stars">${getStars(course.sweetness)}</span></p>
+                <p>考試難度：<span class="stars">${getStars(course.difficulty)}</span></p>
+            </div>
+            <p>討論熱度：${course.commentCount} 💬</p>
+        `;
+        card.addEventListener('click', () => selectCourse(course.id));
+        courseList.appendChild(card);
+    });
+}
+
+// 生成星星評分
+function getStars(rating) {
+    return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+}
+
+// 選擇課程
+function selectCourse(courseId) {
+    selectedCourseId = courseId;
+    document.querySelectorAll('.course-card').forEach(card => card.classList.remove('selected'));
+    document.querySelector(`.course-card[data-id="${courseId}"]`).classList.add('selected');
+    displayComments(courseId);
+    initStars();
+}
+
+// 顯示評論
+function displayComments(courseId) {
+    const commentsList = document.getElementById('comments-list');
+    commentsList.innerHTML = '';
+
+    const courseComments = comments.filter(comment => comment.courseId === courseId);
+    courseComments.forEach(comment => {
+        const commentElement = document.createElement('div');
+        commentElement.className = 'comment';
+        commentElement.innerHTML = `
+            <h4>${comment.username}</h4>
+            <p>${comment.content}</p>
+            <p>課程涼度：<span class="stars">${getStars(comment.coolness)}</span></p>
+            <p>給分甜度：<span class="stars">${getStars(comment.sweetness)}</span></p>
+            <p>考試難度：<span class="stars">${getStars(comment.difficulty)}</span></p>
+        `;
+        commentsList.appendChild(commentElement);
+    });
+}
+
+// 搜索課程
+function searchCourses() {
+    const searchInput = document.getElementById('search-input').value.toLowerCase();
+    const searchType = document.querySelector('input[name="search-type"]:checked').value;
+
+    const filteredCourses = courses.filter(course => {
+        if (searchType === 'course') {
+            return course.name.toLowerCase().includes(searchInput);
+        } else {
+            return course.teacher.toLowerCase().includes(searchInput);
+        }
+    });
+
+    displayCourses(filteredCourses);
+}
+
+// 初始化評分星星
+function initStars() {
+    document.querySelectorAll('.stars[data-rating]').forEach(starsContainer => {
+        starsContainer.innerHTML = '';
+        for (let i = 0; i < 5; i++) {
+            const star = document.createElement('span');
+            star.textContent = '☆';
+            star.addEventListener('click', () => {
+                setStars(starsContainer, i + 1);
+            });
+            starsContainer.appendChild(star);
+        }
+        starsContainer.dataset.value = '0';
+    });
+}
+
+// 設置星星評分
+function setStars(container, rating) {
+    const stars = container.querySelectorAll('span');
+    stars.forEach((star, index) => {
+        star.textContent = index < rating ? '★' : '☆';
+    });
+    container.dataset.value = rating.toString();
+}
+
+// 提交評論
+function submitComment() {
+    if (selectedCourseId === null) {
+        alert('請先選擇一個課程');
+        return;
+    }
+
+    const username = document.getElementById('username').value;
+    const content = document.getElementById('comment-content').value;
+    const coolness = parseInt(document.querySelector('.stars[data-rating="course-coolness"]').dataset.value);
+    const sweetness = parseInt(document.querySelector('.stars[data-rating="grading-sweetness"]').dataset.value);
+    const difficulty = parseInt(document.querySelector('.stars[data-rating="exam-difficulty"]').dataset.value);
+
+    if (!username || !content || coolness === 0 || sweetness === 0 || difficulty === 0) {
+        alert('請填寫所有欄位並給出評分');
+        return;
+    }
+
+    const newComment = {
+        courseId: selectedCourseId,
+        username,
+        content,
+        coolness,
+        sweetness,
+        difficulty
+    };
+
+    comments.unshift(newComment);
+    displayComments(selectedCourseId);
+    updateCourseRatings(selectedCourseId);
+    
+    // 重置表單
+    document.getElementById('username').value = '';
+    document.getElementById('comment-content').value = '';
+    initStars();
+    
+    // 隱藏評論表單
+    document.getElementById('comment-form').style.display = 'none';
+}
+
+// 更新課程評分
+function updateCourseRatings(courseId) {
+    const course = courses.find(c => c.id === courseId);
+    const courseComments = comments.filter(c => c.courseId === courseId);
+
+    course.coolness = Math.round(courseComments.reduce((sum, comment) => sum + comment.coolness, 0) / courseComments.length);
+    course.sweetness = Math.round(courseComments.reduce((sum, comment) => sum + comment.sweetness, 0) / courseComments.length);
+    course.difficulty = Math.round(courseComments.reduce((sum, comment) => sum + comment.difficulty, 0) / courseComments.length);
+    course.commentCount = courseComments.length;
+
+    displayCourses(courses);
+}
+
+// 事件監聽器
+document.addEventListener('DOMContentLoaded', () => {
+    loadData();
+    document.getElementById('search-button').addEventListener('click', searchCourses);
+    document.getElementById('add-comment-button').addEventListener('click', () => {
+        if (selectedCourseId === null) {
+            alert('請先選擇一個課程');
+            return;
+        }
+        document.getElementById('comment-form').style.display = 'block';
+        initStars();
+    });
+    document.getElementById('submit-comment').addEventListener('click', submitComment);
+});
+style.css:
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 1em;
+}
+
+nav a.active {
+    color: white;
+}
+
+main {
+    padding: 2em;
+}
+
+.search-area {
+    margin-bottom: 2em;
+}
+
+#search-input {
+    width: 60%;
+    padding: 0.5em;
+}
+
+.search-options {
+    margin: 1em 0;
+}
+
+#search-button {
+    padding: 0.5em 1em;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    gap: 2em;
+}
+
+.course-list {
+    flex: 1;
+}
+
+.course-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.course-card.selected {
+    border: 2px solid #333;
+}
+
+.course-details {
+    flex: 1;
+}
+
+.stars {
+    color: gold;
+    font-size: 1.2em;
+}
+
+#comment-form {
+    margin-top: 1em;
+}
+
+#comment-form input,
+#comment-form textarea {
+    width: 100%;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+}
+
+.rating {
+    margin-bottom: 0.5em;
+}
+
+#submit-comment {
+    padding: 0.5em 1em;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1em;
+}
+
+.chat-input {
+    display: flex;
+    padding: 1em;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input[type="color"] {
+    width: 50px;
+}
+
+.chat-input input[type="text"] {
+    flex: 1;
+    margin: 0 0.5em;
+    padding: 0.5em;
+}
+
+#send-message {
+    padding: 0.5em 1em;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
