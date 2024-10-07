@@ -134,3 +134,37 @@ test.describe('Typing Practice Website with dynamic text and per-character typin
 });
 
 ```
+
+## mermaid
+
+```mermaid
+graph TD
+    A[開始測試] --> B[背景切換測試]
+    B --> C1[檢查初始背景色]
+    C1 --> C2[點擊切換背景]
+    C2 --> C3[檢查切換後背景色]
+
+    A --> D[難度與文本長度選擇測試]
+    D --> E1[檢查初始難度與文本長度]
+    E1 --> E2[切換難度為 medium]
+    E2 --> E3[切換文本長度為 long]
+
+    A --> F[打字功能測試]
+    F --> G1[獲取隨機生成的文本]
+    G1 --> G2[逐字輸入文本]
+    G2 --> G3[檢查 WPM 和準確率更新]
+
+    A --> H[結果顯示測試]
+    H --> I1[逐字輸入文本]
+    I1 --> I2[檢查結果是否顯示]
+    I2 --> I3[檢查 WPM, 準確率顯示]
+
+    A --> J[關閉結果測試]
+    J --> K1[輸入文本並完成測試]
+    K1 --> K2[點擊關閉結果按鈕]
+    K2 --> K3[確認結果窗口關閉]
+
+    classDef important fill:#f9f,stroke:#333,stroke-width:2px;
+    class A important;
+  
+```
